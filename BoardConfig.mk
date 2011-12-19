@@ -17,10 +17,10 @@
 # Product-specific compile-time definitions
 #
 
-USE_CAMERA_STUB := true
-
 # Use the non-open-source parts if they are present
 -include vendor/htc/pyramid/BoardConfigVendor.mk
+
+TARGET_SPECIFIC_HEADER_PATH := device/htc/pyramid/include
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
