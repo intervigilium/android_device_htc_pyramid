@@ -29,7 +29,7 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_BOOTLOADER_BOARD_NAME := pyramid
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8x60
+TARGET_BOARD_PLATFORM := msm8660
 #TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 #TARGET_PROVIDES_INIT_TARGET_RC := true
@@ -68,7 +68,7 @@ USE_CAMERA_STUB := true
 # endif
 
 # Graphics
-USE_OPENGL_RENDERER := false
+USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/htc/pyramid/egl.cfg
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
