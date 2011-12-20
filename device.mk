@@ -79,7 +79,7 @@ PRODUCT_COPY_FILES += \
 # Misc other modules
 PRODUCT_PACKAGES += \
     lights.pyramid \
-    hwcomposer.msm8660 \
+    hwcomposer.msm8x60 \
     sensors.pyramid
 
 # Camera
