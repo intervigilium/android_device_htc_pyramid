@@ -92,6 +92,7 @@ adb pull /system/lib/libaudcalwb.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudcal_nel.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudio.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libaudipolicy.so ../../../vendor/htc/$DEVICE/proprietary
 
 # Graphics
 adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
@@ -167,6 +168,7 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libacdbmapper.so:obj/lib/libacdbmapper.so \\
     vendor/htc/__DEVICE__/proprietary/libaudio.so:obj/lib/libaudio.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so \\
+    vendor/htc/__DEVICE__/proprietary/libaudiopolicy.so:obj/lib/libaudiopolicy.so \\
     vendor/htc/__DEVICE__/proprietary/libril.so:obj/lib/libril.so
 
 # Binaries
@@ -246,7 +248,6 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libaudcal.so:/system/lib/libaudcal.so \\
     vendor/htc/__DEVICE__/proprietary/libaudcalwb.so:/system/lib/libaudcalwb.so \\
     vendor/htc/__DEVICE__/proprietary/libaudcal_nel.so:/system/lib/libaudcal_nel.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudio.so:/system/lib/libaudio.so \\
     vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
 
 # Graphics
