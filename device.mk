@@ -78,8 +78,9 @@ PRODUCT_COPY_FILES += \
 
 # Misc other modules
 PRODUCT_PACKAGES += \
-    lights.pyramid \
+    gralloc.msm8x60 \
     hwcomposer.msm8x60 \
+    lights.pyramid \
     sensors.pyramid
 
 # Camera
