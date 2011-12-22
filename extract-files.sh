@@ -137,10 +137,7 @@ adb pull /system/lib/libhtc_ril_switch.so ../../../vendor/htc/$DEVICE/proprietar
 adb pull /system/lib/libril.so ../../../vendor/htc/$DEVICE/proprietary
 
 # Hardware files
-adb pull /system/lib/hw/copybit.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/gps.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/hw/gralloc.default.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/hw/gralloc.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/lights.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/overlay.default.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/sensors.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
@@ -301,10 +298,7 @@ PRODUCT_COPY_FILES += \\
 
 # Hardware files
 PRODUCT_COPY_FILES += \\
-    vendor/htc/__DEVICE__/proprietary/copybit.msm8660.so:/system/lib/hw/copybit.msm8660.so \\
     vendor/htc/__DEVICE__/proprietary/gps.pyramid.so:/system/lib/hw/gps.pyramid.so \\
-    vendor/htc/__DEVICE__/proprietary/gralloc.default.so:/system/lib/hw/gralloc.default.so \\
-    vendor/htc/__DEVICE__/proprietary/gralloc.msm8660.so:/system/lib/hw/gralloc.msm8660.so \\
     vendor/htc/__DEVICE__/proprietary/lights.msm8660.so:/system/lib/hw/lights.msm8660.so \\
     vendor/htc/__DEVICE__/proprietary/overlay.default.so:/system/lib/hw/overlay.default.so \\
     vendor/htc/__DEVICE__/proprietary/sensors.pyramid.so:/system/lib/hw/sensors.pyramid.so
