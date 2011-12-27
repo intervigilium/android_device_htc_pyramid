@@ -74,6 +74,7 @@ USE_CAMERA_STUB := true
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
 BOARD_USES_GENLOCK := true
+TARGET_USES_ION : false
 BOARD_EGL_CFG := device/htc/pyramid/egl.cfg
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
