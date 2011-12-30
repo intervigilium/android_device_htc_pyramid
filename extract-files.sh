@@ -92,7 +92,7 @@ adb pull /system/lib/libaudcalwb.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudcal_nel.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudio.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libaudipolicy.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libaudiopolicy.so ../../../vendor/htc/$DEVICE/proprietary
 
 # Graphics
 adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
