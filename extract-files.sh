@@ -230,7 +230,7 @@ PRODUCT_COPY_FILES += \\
 
 # Firmware
 PRODUCT_COPY_FILES += \\
-    vendor/htc/__DEVICE__/proprietary/BCM4329B1_002.002.023.0589.0632.hcd:/system/etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd \\
+    vendor/htc/__DEVICE__/proprietary/BCM4329B1_002.002.023.0589.0632.hcd:/system/etc/firmware/bcm4329.hcd \\
     vendor/htc/__DEVICE__/proprietary/fw_bcm4329_apsta.bin:/system/etc/firmware/fw_bcm4329_apsta.bin \\
     vendor/htc/__DEVICE__/proprietary/fw_bcm4329.bin:/system/etc/firmware/fw_bcm4329.bin \\
     vendor/htc/__DEVICE__/proprietary/leia_pfp_470.fw:/system/etc/firmware/leia_pfp_470.fw \\
