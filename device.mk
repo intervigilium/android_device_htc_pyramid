@@ -42,6 +42,7 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/init:root/init \
     device/htc/pyramid/init.rc:root/init.rc \
     device/htc/pyramid/init.pyramid.rc:root/init.pyramid.rc \
+    device/htc/pyramid/init.pyramid.usb.rc:root/init.pyramid.usb.rc \
     device/htc/pyramid/ueventd.rc:root/ueventd.rc \
     device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
