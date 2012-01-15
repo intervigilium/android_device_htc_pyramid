@@ -69,24 +69,18 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
 
-# These are the OpenMAX IL configuration files
-PRODUCT_COPY_FILES += \
-    device/htc/pyramid/media_profiles.xml:system/etc/media_profiles.xml
-
-# These are the OpenMAX IL modules
-#PRODUCT_PACKAGES += \
-#    libOMX.SEC.AVC.Decoder
-
-# Misc other modules
+# Hardware
 PRODUCT_PACKAGES += \
     gralloc.msm8x60 \
     hwcomposer.msm8x60 \
+    gps.pyramid \
     lights.pyramid \
-    sensors.pyramid
+    sensors.pyramid \
+    camera.pyramid
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.pyramid
+    libcamera
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -95,14 +89,21 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     libaudioutils
 
-# Libs
+# Media
 PRODUCT_PACKAGES += \
-    libcamera \
     libstagefrighthw \
     librs_jni \
     libOmxVenc \
-    libOmxVdec \
+    libOmxVdec
+#   libOMX.SEC.AVC.Decoder
+
+# USB
+PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
+
+# These are the OpenMAX IL configuration files
+PRODUCT_COPY_FILES += \
+    device/htc/pyramid/media_profiles.xml:system/etc/media_profiles.xml
 
 # Input device calibration files
 PRODUCT_COPY_FILES += \
@@ -141,10 +142,6 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=eth0 \
     wifi.supplicant_scan_interval=15
-
-# Set default USB interface
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mass_storage
 
 include frameworks/base/build/phone-hdpi-512-dalvik-heap.mk
 

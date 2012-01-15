@@ -137,10 +137,10 @@ adb pull /system/lib/libhtc_ril_switch.so ../../../vendor/htc/$DEVICE/proprietar
 adb pull /system/lib/libril.so ../../../vendor/htc/$DEVICE/proprietary
 
 # Hardware files
-adb pull /system/lib/hw/gps.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/hw/lights.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/hw/overlay.default.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/hw/sensors.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
+#adb pull /system/lib/hw/gps.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
+#adb pull /system/lib/hw/lights.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
+#adb pull /system/lib/hw/overlay.default.so ../../../vendor/htc/$DEVICE/proprietary
+#adb pull /system/lib/hw/sensors.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
 #
@@ -297,11 +297,11 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libril.so:/system/lib/libril.so
 
 # Hardware files
-PRODUCT_COPY_FILES += \\
-    vendor/htc/__DEVICE__/proprietary/gps.pyramid.so:/system/lib/hw/gps.pyramid.so \\
-    vendor/htc/__DEVICE__/proprietary/lights.msm8660.so:/system/lib/hw/lights.msm8660.so \\
-    vendor/htc/__DEVICE__/proprietary/overlay.default.so:/system/lib/hw/overlay.default.so \\
-    vendor/htc/__DEVICE__/proprietary/sensors.pyramid.so:/system/lib/hw/sensors.pyramid.so
+#PRODUCT_COPY_FILES += \\
+#    vendor/htc/__DEVICE__/proprietary/gps.pyramid.so:/system/lib/hw/gps.pyramid.so \\
+#    vendor/htc/__DEVICE__/proprietary/lights.msm8660.so:/system/lib/hw/lights.msm8660.so \\
+#    vendor/htc/__DEVICE__/proprietary/overlay.default.so:/system/lib/hw/overlay.default.so \\
+#    vendor/htc/__DEVICE__/proprietary/sensors.pyramid.so:/system/lib/hw/sensors.pyramid.so
 EOF
 
 ./setup-makefiles.sh
