@@ -42,7 +42,6 @@ TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
 
 # Insecure boot
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
-ADDITIONAL_DEFAULT_PROPERTIES += persist.service.adb.enable=1
 
 # QCOM hardware
 BOARD_PROVIDES_LIBRIL := true
