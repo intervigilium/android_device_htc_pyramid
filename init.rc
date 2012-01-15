@@ -1,4 +1,4 @@
-#import init.pyramid.usb.rc
+import init.pyramid.usb.rc
 
 on early-init
     start ueventd
