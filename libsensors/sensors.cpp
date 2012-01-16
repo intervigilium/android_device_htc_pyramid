@@ -27,13 +27,63 @@
 #include <cutils/atomic.h>
 #include <cutils/log.h>
 
-#include "nusensors.h"
+#include "sensors.h"
 
 #include "MPLSensor.h"
 #include "LightSensor.h"
 #include "ProximitySensor.h"
 
 /*****************************************************************************/
+
+#define SENSORS_LIGHT_HANDLE            (ID_L)
+#define SENSORS_PROXIMITY_HANDLE        (ID_P)
+
+/*****************************************************************************/
+
+/* The SENSORS Module */
+#define LOCAL_SENSORS (2)
+static struct sensor_t sSensorList[] = {
+        { "CM3628 Light sensor",
+                "Capella Microsystems",
+                1, SENSORS_LIGHT_HANDLE,
+                SENSOR_TYPE_LIGHT, 10240.0f, 1.0f, 0.5f, 0, { } },
+        { "CM3628 Proximity sensor",
+                "Capella Microsystems",
+                1, SENSORS_PROXIMITY_HANDLE,
+                SENSOR_TYPE_PROXIMITY,
+                PROXIMITY_THRESHOLD_CM, PROXIMITY_THRESHOLD_CM,
+                0.5f, 0, { } },
+};
+static int numSensors = LOCAL_SENSORS;
+
+static int open_sensors(const struct hw_module_t* module, const char* name,
+        struct hw_device_t** device);
+
+static int sensors__get_sensors_list(struct sensors_module_t* module,
+        struct sensor_t const** list)
+{
+    *list = sSensorList;
+    return numSensors;
+}
+
+static struct hw_module_methods_t sensors_module_methods = {
+    open: open_sensors
+};
+
+struct sensors_module_t HAL_MODULE_INFO_SYM = {
+    common: {
+        tag: HARDWARE_MODULE_TAG,
+        version_major: 1,
+        version_minor: 0,
+        id: SENSORS_HARDWARE_MODULE_ID,
+        name: "MPU3050 & CM3628 Sensors Module",
+        author: "The Android Open Source Project",
+        methods: &sensors_module_methods,
+        dso: 0,
+        reserved: {},
+    },
+    get_sensors_list: sensors__get_sensors_list
+};
 
 struct sensors_poll_context_t {
     struct sensors_poll_device_t device; // must be first
@@ -255,7 +305,9 @@ static int poll__poll(struct sensors_poll_device_t *dev,
 
 /*****************************************************************************/
 
-int init_nusensors(hw_module_t const* module, hw_device_t** device)
+/* Open a new instance of a sensor device using name */
+static int open_sensors(const struct hw_module_t* module, const char *id,
+                        struct hw_device_t** device)
 {
     int status = -EINVAL;
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ANDROID_NUSENSORS_H
-#define ANDROID_NUSENSORS_H
+#ifndef ANDROID_PYRAMID_SENSORS_H
+#define ANDROID_PYRAMID_SENSORS_H
 
 #include <stdint.h>
 #include <errno.h>
@@ -28,10 +28,6 @@
 #include <hardware/sensors.h>
 
 __BEGIN_DECLS
-
-/*****************************************************************************/
-
-int init_nusensors(hw_module_t const* module, hw_device_t** device);
 
 /*****************************************************************************/
 
@@ -52,6 +48,9 @@ int init_nusensors(hw_module_t const* module, hw_device_t** device);
 #define PROXIMITY_THRESHOLD_CM  9.0f
 
 /*****************************************************************************/
+
+#define CM_DEVICE_NAME              "/dev/cm3602"
+#define LS_DEVICE_NAME              "/dev/lightsensor"
 
 #define EVENT_TYPE_ACCEL_X          ABS_X
 #define EVENT_TYPE_ACCEL_Y          ABS_Z
@@ -98,4 +97,4 @@ int init_nusensors(hw_module_t const* module, hw_device_t** device);
 
 __END_DECLS
 
-#endif  // ANDROID_SENSORS_H
+#endif  // ANDROID_PYRAMID_SENSORS_H
