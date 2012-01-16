@@ -69,10 +69,16 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
 
+# Display
+PRODUCT_PACKAGES += \
+    copybit.msm8x60 \
+    gralloc.msm8x60 \
+    overlay.msm8x60 \
+    hwcomposer.msm8x60
+#    hwcomposer.default
+
 # Hardware
 PRODUCT_PACKAGES += \
-    gralloc.msm8x60 \
-    hwcomposer.msm8x60 \
     gps.pyramid \
     lights.pyramid \
     sensors.pyramid \
