@@ -76,7 +76,7 @@ TARGET_USES_ION := false
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_USES_GENLOCK := true
-TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_C2D_COMPOSITION := false
 TARGET_HAVE_BYPASS := true
 BOARD_EGL_CFG := device/htc/pyramid/egl.cfg
 #BOARD_USES_HGL := true
