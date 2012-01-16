@@ -95,6 +95,7 @@ adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudiopolicy.so ../../../vendor/htc/$DEVICE/proprietary
 
 # Graphics
+adb pull /system/lib/libsc-a2xx.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/eglsubAndroid.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libEGL_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/egl/libGLESv1_CM_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
@@ -252,6 +253,7 @@ PRODUCT_COPY_FILES += \\
 
 # Graphics
 PRODUCT_COPY_FILES += \\
+    vendor/htc/__DEVICE__/proprietary/libsc-a2xx.so:/system/lib/libsc-a2xx.so \\
     vendor/htc/__DEVICE__/proprietary/eglsubAndroid.so:/system/lib/egl/eglsubAndroid.so \\
     vendor/htc/__DEVICE__/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \\
     vendor/htc/__DEVICE__/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
