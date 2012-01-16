@@ -1,0 +1,12 @@
+Ice Cream Sandwich Device tree for HTC Pyramid (Sensation)
+
+Current issues:
+-proximity sensor is still using cm3602 code, not cm3628 code
+-kernel is based off Tiamat source, although it doesn't seem to boot correctly.
+-GPS and audio are untested
+
+Credits goes to:
+Cyanogenmod team
+Evervolv team
+Tiamat kernel team
+toastcfh
