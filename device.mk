@@ -106,6 +106,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+# Set default USB interface
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mass_storage,adb
+
 # These are the OpenMAX IL configuration files
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/media_profiles.xml:system/etc/media_profiles.xml
