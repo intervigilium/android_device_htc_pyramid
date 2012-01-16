@@ -13,27 +13,20 @@
 # limitations under the License.
 
 
-LOCAL_PATH := $(call my-dir)
-
-# HAL module implemenation, not prelinked, and stored in
-# hw/<SENSORS_HARDWARE_MODULE_ID>.<ro.product.board>.so
+LOCAL_PATH:= $(call my-dir)
+# HAL module implemenation stored in
+# hw/<COPYPIX_HARDWARE_MODULE_ID>.<ro.board.platform>.so
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := sensors.pyramid
+LOCAL_SRC_FILES := lights.c
+
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 
+LOCAL_SHARED_LIBRARIES := liblog
+
+LOCAL_MODULE := lights.pyramid
+
 LOCAL_MODULE_TAGS := optional
-
-LOCAL_CFLAGS := -DLOG_TAG=\"Sensors\"
-LOCAL_C_INCLUDES += hardware/invensense/libsensors
-LOCAL_SRC_FILES := \
-	sensors.c \
-	nusensors.cpp \
-	InputEventReader.cpp \
-	LightSensor.cpp \
-	ProximitySensor.cpp
-
-LOCAL_SHARED_LIBRARIES := libinvensense_hal libcutils liblog libutils libdl
 
 include $(BUILD_SHARED_LIBRARY)

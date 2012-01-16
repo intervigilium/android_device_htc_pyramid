@@ -73,7 +73,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     copybit.msm8x60 \
     gralloc.msm8x60 \
-    overlay.msm8x60 \
     hwcomposer.msm8x60
 #    hwcomposer.default
 
