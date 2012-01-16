@@ -28,6 +28,7 @@
 #include <cutils/log.h>
 
 #include "nusensors.h"
+
 #include "MPLSensor.h"
 #include "LightSensor.h"
 #include "ProximitySensor.h"

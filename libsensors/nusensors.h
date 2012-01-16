@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ANDROID_SENSORS_H
-#define ANDROID_SENSORS_H
+#ifndef ANDROID_NUSENSORS_H
+#define ANDROID_NUSENSORS_H
 
 #include <stdint.h>
 #include <errno.h>
