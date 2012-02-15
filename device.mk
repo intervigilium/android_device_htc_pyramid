@@ -48,12 +48,12 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt kl and kcm keypads
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl \
-    device/htc/pyramid/pyramid-keypad.kcm.bin:system/usr/keylayout/pyramid-keypad.kcm.bin \
-    device/htc/pyramid/BT_HID.kl:system/usr/keylayout/BT_HID.kl \
-    device/htc/pyramid/BT_HID.kcm.bin:system/usr/keylayout/BT_HID.kcm.bin \
-    device/htc/pyramid/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
-    device/htc/pyramid/AVRCP.kl:system/usr/keylayout/AVRCP.kl
+    device/htc/pyramid/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl \
+    device/htc/pyramid/keychars/pyramid-keypad.kcm.bin:system/usr/keylayout/pyramid-keypad.kcm.bin \
+    device/htc/pyramid/keylayout/BT_HID.kl:system/usr/keylayout/BT_HID.kl \
+    device/htc/pyramid/keychars/BT_HID.kcm.bin:system/usr/keylayout/BT_HID.kcm.bin \
+    device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+    device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl
 
 # Bluetooth setup
 PRODUCT_COPY_FILES += \
