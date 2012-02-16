@@ -46,23 +46,28 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/ueventd.rc:root/ueventd.rc \
     device/htc/pyramid/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
-# Prebuilt kl and kcm keypads
+# kcm keymaps
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl \
-    device/htc/pyramid/keychars/pyramid-keypad.kcm.bin:system/usr/keylayout/pyramid-keypad.kcm.bin \
-    device/htc/pyramid/keylayout/BT_HID.kl:system/usr/keylayout/BT_HID.kl \
-    device/htc/pyramid/keychars/BT_HID.kcm.bin:system/usr/keylayout/BT_HID.kcm.bin \
-    device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+    device/htc/pyramid/keychars/Generic.kcm:system/usr/keylayout/Generic.kcm \
+    device/htc/pyramid/keychars/pyramid-keypad.kcm:system/usr/keylayout/pyramid-keypad.kcm \
+    device/htc/pyramid/keychars/qwerty2.kcm:system/usr/keylayout/qwerty2.kcm \
+    device/htc/pyramid/keychars/qwerty2.kcm.bin:system/usr/keylayout/qwerty2.kcm.bin \
+    device/htc/pyramid/keychars/qwerty.kcm:system/usr/keylayout/qwerty.kcm \
+    device/htc/pyramid/keychars/qwerty.kcm.bin:system/usr/keylayout/qwerty.kcm.bin \
+    device/htc/pyramid/keychars/Virtual.kcm:system/usr/keylayout/Virtual.kcm
+
+# kl keylayouts
+PRODUCT_COPY_FILES += \
     device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl
+    device/htc/pyramid/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl
+    device/htc/pyramid/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
+    device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+    device/htc/pyramid/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl \
+    device/htc/pyramid/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
 
 # Bluetooth setup
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.conf:system/etc/bluetooth/main.conf
-
-# Generated kcm keypads
-PRODUCT_PACKAGES += \
-    pyramid-keypad.kcm.bin \
-    BT_HID.kcm.bin
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -116,7 +121,10 @@ PRODUCT_COPY_FILES += \
 
 # Input device calibration files
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc
+    device/htc/pyramid/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc
+    device/htc/pyramid/idc/qwerty.idc:system/usr/idc/qwerty.idc
+    device/htc/pyramid/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
+    device/htc/pyramid/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
 # for bugmailer
 PRODUCT_PACKAGES += send_bug
