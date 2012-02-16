@@ -4,20 +4,26 @@ on emmc
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
-    wait emmc@system
-    mount ext4 emmc@system /system ro barrier=1
-    wait emmc@userdata
-#   exec /system/bin/e2fsck -p emmc@userdata
-    mount ext4 emmc@userdata /data nosuid nodev barrier=1 noauto_da_alloc
-    mount ext4 emmc@cache /cache nosuid nodev barrier=1
-    mount ext4 emmc@devlog /devlog nosuid nodev barrier=1
+    devwait emmc@system
+    mount ext4 emmc@system /system ro noatime
+    devwait emmc@userdata
+    mount ext4 emmc@userdata /data noatime nosuid nodev noauto_da_alloc
+    devwait emmc@cache
+    mount ext4 emmc@cache /cache noatime nosuid nodev
+    devwait emmc@devlog
+    mount ext4 emmc@devlog /devlog noatime nosuid nodev
 
     #8x60: mount radio partition and create links for modem/q6 firmwares
     mkdir /vendor               0771 system system
     mkdir /vendor/firmware      0771 system system
     mkdir /vendor/firmware/misc 0771 system system
+    mkdir /vendor/firmware/adsp 0771 system system
     devwait emmc@radio
+    devwait emmc@adsp
     mount vfat emmc@radio /vendor/firmware/misc ro shortname=lower
+    mount vfat emmc@adsp /vendor/firmware/adsp ro shortname=lower
+    symlink /vendor/firmware/misc/q6.b09 /vendor/firmware/q6.b09
+    symlink /vendor/firmware/misc/q6.b08 /vendor/firmware/q6.b08
     symlink /vendor/firmware/misc/q6.b07 /vendor/firmware/q6.b07
     symlink /vendor/firmware/misc/q6.b06 /vendor/firmware/q6.b06
     symlink /vendor/firmware/misc/q6.b05 /vendor/firmware/q6.b05
@@ -55,30 +61,27 @@ on init
     chown system system /dev/mpuirq
     chown system system /dev/timerirq
 
-    # 3LM settings
-    setprop ro.3lm.production 1
-
-    # 3LM encryption
-    setprop ro.3lm.legacy_encryption 1
-    mkdir /data/secure 0755 system system
-    mkdir /data/secure/data 0755 system system
-    mount tmpfs tmpfs /data/secure/data mode=0755,gid=1000
-
 on boot
-# + SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
     mkdir /data/radio 0770 radio radio
-# - SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
+    mkdir /data/misc 1771 system misc
+    mkdir /data/misc/bluetoothd 0770 bluetooth bluetooth
+    mkdir /data/misc/keystore 0700 keystore keystore
+    mkdir /data/misc/vpn 0770 system system
+    mkdir /data/misc/vpn/profiles 0770 system system
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
-    mkdir /data/d 0777 system system
-#   mount debugfs /data/d /data/d
+    setprop softap.interface wl0.1
 
     # bluetooth power up/down interface
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chmod 0660                /sys/class/rfkill/rfkill0/state
+
+    # Bluetooth MAC address path
+    chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddress
+    setprop ro.bt.bdaddr_path /sys/module/htc_bdaddress/parameters/bdaddress
 
     # for modem link
     chown system system /sys/module/serial/parameters/modem_enabled
@@ -99,6 +102,19 @@ on boot
     chown system system /sys/class/optical_sensors/proximity/ps_led
     chown system system /sys/class/optical_sensors/proximity/ps_test_mode
 
+    chown system camera /sys/class/leds/flashlight/brightness
+    chmod 0660 /sys/class/leds/flashlight/brightness
+
+    # Permissions for Camera
+    # TODO: set these in ueventd perhaps?
+    chmod 0666 /dev/msm_camera/config0
+    chmod 0666 /dev/msm_camera/control0
+    chmod 0666 /dev/msm_camera/frame0
+    chmod 0666 /dev/msm_camera/config1
+    chmod 0666 /dev/msm_camera/control1
+    chmod 0666 /dev/msm_camera/frame1
+    chmod 0666 /dev/graphics/fb0
+
     # for simlock
     chown radio radio /dev/simlock
     chmod 0660 /dev/simlock
@@ -108,19 +124,23 @@ on boot
     chmod 0660 /sys/module/htc_battery_8x60/parameters/phone_call
 
     # Load kineto_gan.ko while booting
-    #insmod /system/lib/modules/kineto_gan.ko
+    insmod /system/lib/modules/kineto_gan.ko
 
     # Load bcmdhd.ko while booting
-    insmod /system/lib/modules/bcmdhd.ko
+    #insmod /system/lib/modules/bcmdhd.ko
 
     # Discretix DRM
-    #mkdir /data/DxDrm
-    #mkdir /data/DxDrm/fuse
-    #mkdir /data/DxDrm/Credentials
-    #mkdir /data/DxDrm/Credentials/PlayReady
-    #chmod 555 /data/DxDrm
-    #copy /etc/DxPrdyProvisionObf.pkg /data/DxDrm/Credentials/PlayReady/DxPrdyProvisionObf.pkg
-    #copy /etc/DxDrmConfig_Server.txt /data/DxDrm/DxDrmConfig_Server.txt
+    mkdir /data/DxDrm
+    mkdir /data/DxDrm/fuse
+    mkdir /data/DxDrm/Credentials
+    mkdir /data/DxDrm/Credentials/PlayReady
+    chmod 555 /data/DxDrm
+    copy /etc/DxPrdyProvisionObf.pkg /data/DxDrm/Credentials/PlayReady/DxPrdyProvisionObf.pkg
+    copy /etc/DxDrmConfig_Server.txt /data/DxDrm/DxDrmConfig_Server.txt
+
+    # Widevine DRM
+    chown drm system /dev/htcdrm
+    chmod 0660 /dev/htcdrm
 
     # Overwrite framework low memory killer setting
     write /sys/module/lowmemorykiller/parameters/minfree 2048,3072,4096,6144,8192,12288
@@ -148,13 +168,6 @@ service dhcpcd_p2p /system/bin/dhcpcd -aABKL
     disabled
     oneshot
 
-# [3LM] device manager 3LM service
-service tund /system/bin/tund
-    socket tund stream 0660 vpn system
-    user vpn
-    group vpn net_admin net_raw
-    ioprio be 2
-
 service iprenew_wlan0 /system/bin/dhcpcd -n
     disabled
     oneshot
@@ -169,20 +182,10 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
     oneshot
     keycodes 114 115
 
-#service hciattach /system/bin/brcm_patchram_plus --enable_hci --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
+#service hciattach /system/bin/brcm_patchram_plus -d --enable_hci --baudrate 3000000 --patchram /vendor/firmware/bcm4329.hcd /dev/ttyHS0
 #    user bluetooth
 #    group bluetooth net_bt_admin
 #    disabled
-
-# Make sure we startup btld before hcid
-# Set target address to emulator host loopback IF
-# Limit baudrate to 460800 to ensure reliable uart operation
-#service btld /system/bin/logwrapper /system/bin/btld -hwtun 10.0.2.2 -hb 460800 3000000 -lpm 1
-service btld /system/bin/logwrapper /system/bin/btld -lpm 1 -hb 3000000
-    user root
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
 
 # for USB internet sharing
 service udhcpd /system/bin/udhcpd
@@ -201,16 +204,7 @@ service netsharing_pass /system/bin/netsharing net_pass on
     disabled
     oneshot
 
-service srv_ser2net /system/bin/ser2net -n
-    disabled
-
-on property:service.ser2net.enable=1
-    start srv_ser2net
-
-on property:service.ser2net.enable=0
-    stop srv_ser2net
-
-service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p25 /dev/block/mmcblk0p26 /dev/block/mmcblk0p18
+service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p26 /dev/block/mmcblk0p27 /dev/block/mmcblk0p18
     user root
     disabled
 
@@ -249,28 +243,11 @@ on property:ro.use_data_netmgrd=false
     stop netmgrd
 # - SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
 
-# for vnc
-service androidvncserver /system/bin/androidvncserver -a
-    disabled
-    oneshot
-
-service usbnet /system/bin/usbnet on
-    disabled
-    oneshot
-
 service hdmid /system/bin/hdmid
     socket displayd stream 0660 root system graphics
 
 service htcbatt /system/bin/htcbatt
     user root
-
-service dcvs0 /system/bin/dcvs --cpu=0 --slacktime=16
-    user root
-    disabled
-
-service dcvs1 /system/bin/dcvs --cpu=1 --slacktime=16
-    user root
-    disabled
 
 service mpdecision /system/bin/mpdecision --Nw 5.4 --Ts 350 --no_sleep --avg_comp --single_core_while_panel_off
     user root
@@ -281,36 +258,27 @@ service thermald /system/bin/thermald
     disabled
 
 on property:init.svc.bootanim=stopped
-#    start qcom-post-boot
+    start qcom-post-boot
     start thermald
     start mpdecision
 
-#service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
-#    user root
-#    disabled
-#    oneshot
-
-#service htc_ebdlogd /system/bin/htc_ebdlogd -s -k -P 7
-#    user root
-#    disabled
-#    oneshot
-#    ioprio idle 0
-
-#service htc_ebdlogd_rel /system/bin/htc_ebdlogd -s -k
-#    user root
-#    disabled
-#    oneshot
-#    ioprio idle 0
+service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
+    user root
+    disabled
+    oneshot
 
 service tpd /sbin/tpd
     user root
 
 # Discretix DRM
-#service dx_drm_server /system/bin/DxDrmServerIpc -f -o allow_other /data/DxDrm/fuse
+service dx_drm_server /system/bin/DxDrmServerIpc -f -o allow_other /data/DxDrm/fuse
 
-#on property:ro.build.tags=test-keys
-#    start htc_ebdlogd
+# CABL
+service abld /system/bin/mm-abl-daemon
+    disabled
 
-#on property:ro.build.tags=release-keys
-#    start htc_ebdlogd_rel
+on property:ro.qualcomm.cabl=1
+    start abld
 
+on property:ro.qualcomm.cabl=0
+    stop abld
