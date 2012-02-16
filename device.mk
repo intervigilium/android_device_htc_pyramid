@@ -179,6 +179,9 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_WIFI_MODULE):system/lib/modules/bcm4329.ko
 
+PRODUCT_COPY_FILES += \
+    device/htc/pyramid/kineto_gan.ko:system/lib/modules/kineto_gan.ko
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/pyramid/kernel
 else
