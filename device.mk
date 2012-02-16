@@ -58,12 +58,12 @@ PRODUCT_COPY_FILES += \
 
 # kl keylayouts
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl
-    device/htc/pyramid/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl
+    device/htc/pyramid/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+    device/htc/pyramid/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl \
     device/htc/pyramid/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
     device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     device/htc/pyramid/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl \
-    device/htc/pyramid/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/htc/pyramid/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl
 
 # Bluetooth setup
 PRODUCT_COPY_FILES += \
@@ -122,9 +122,9 @@ PRODUCT_COPY_FILES += \
 
 # Input device calibration files
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc
-    device/htc/pyramid/idc/qwerty.idc:system/usr/idc/qwerty.idc
-    device/htc/pyramid/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
+    device/htc/pyramid/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc \
+    device/htc/pyramid/idc/qwerty.idc:system/usr/idc/qwerty.idc \
+    device/htc/pyramid/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
     device/htc/pyramid/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
 # for bugmailer
