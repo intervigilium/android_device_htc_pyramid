@@ -94,10 +94,10 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio_policy.pyramid \
-    audio.primary.pyramid \
     audio.a2dp.default \
     libaudioutils
+#    audio_policy.pyramid \
+#    audio.primary.pyramid \
 
 # Media
 PRODUCT_PACKAGES += \
