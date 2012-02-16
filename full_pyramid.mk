@@ -24,7 +24,9 @@ PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.
 
 # Some overrides
 PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0 \
     ro.com.google.clientidbase=android-htc \
+    ro.com.google.gmsversion=4.0.3_r0 \
     ro.com.google.locationfeatures=1 \
     ro.com.google.networklocation=1 \
     ro.setupwizard.enable_bypass=1 \
