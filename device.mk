@@ -79,20 +79,21 @@ PRODUCT_PACKAGES += \
     copybit.msm8x60 \
     gralloc.msm8x60 \
     hwcomposer.msm8x60
-#    hwcomposer.default
 
 # Hardware
-PRODUCT_PACKAGES += \
-    gps.pyramid \
-    lights.pyramid \
-    sensors.pyramid \
-    camera.pyramid
+# TODO: build our own gps, lights, sensors eventually
+#PRODUCT_PACKAGES += \
+#    gps.pyramid \
+#    lights.pyramid \
+#    sensors.pyramid \
+#    camera.pyramid
 
 # Camera
 PRODUCT_PACKAGES += \
     libcamera
 
 # Audio
+# TODO: build audio_policy, audio.primary eventually
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     libaudioutils
@@ -100,12 +101,12 @@ PRODUCT_PACKAGES += \
 #    audio.primary.pyramid \
 
 # Media
+# TODO: build libOmxVenc, libOmxVdec eventually
 PRODUCT_PACKAGES += \
     libstagefrighthw \
-    librs_jni \
-    libOmxVenc \
-    libOmxVdec
-#   libOMX.SEC.AVC.Decoder
+    librs_jni
+#    libOmxVenc \
+#    libOmxVdec
 
 # USB
 PRODUCT_PACKAGES += \
