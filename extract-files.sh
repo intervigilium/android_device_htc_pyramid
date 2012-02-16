@@ -20,14 +20,11 @@ mkdir -p ../../../vendor/htc/$DEVICE/proprietary
 
 # Executable files
 adb pull /system/bin/awb_camera ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/bma150_usr ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/btld ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/charging ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/dcvs ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/dcvsd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/hdmid ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/htc_ebdlogd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/htcbatt ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/bin/hciattach ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/ipd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/ip ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/load-modem.sh ../../../vendor/htc/$DEVICE/proprietary
@@ -38,22 +35,20 @@ adb pull /system/bin/netmgrd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/netsharing ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/rild ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/rmt_storage ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/ser2net ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/sound8x60 ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/thermald ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/bin/qmuxd ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/bin/usbnet ../../../vendor/htc/$DEVICE/proprietary
 
 adb pull /system/xbin/wireless_modem ../../../vendor/htc/$DEVICE/proprietary
 
 # Configuration files
 adb pull /system/etc/agps_rm ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/thermald.conf ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/vpimg ../../../vendor/htc/$DEVICE/proprietary
 
 # Codec configs
+adb pull /system/etc/AdieHWCodec.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AIC3254_REG.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AIC3254_REG_DualMic.csv ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/etc/AdieHWCodec.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/AudioBTID.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/CodecDSPID.txt ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/CodecDSPID_WB.txt ../../../vendor/htc/$DEVICE/proprietary
@@ -61,11 +56,18 @@ adb pull /system/etc/TPA2051_CFG.csv ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/TPA2051_CFG_XC.csv ../../../vendor/htc/$DEVICE/proprietary
 
 # Soundimage
+adb pull /system/etc/soundimage/Sound_MFG.txt ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/soundimage/Sound_Original_Recording.txt ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/soundimage/Sound_Original_SPK.txt ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/soundimage/Sound_Original.txt ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/soundimage/Sound_Phone_Original_HP_LE.txt ../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/soundimage/Sound_Phone_Original_HP.txt ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/soundimage/Sound_Phone_Original_HP_WB_LE.txt ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/soundimage/Sound_Phone_Original_HP_WB.txt ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/soundimage/Sound_Phone_Original_REC_NEL.txt ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/soundimage/Sound_Phone_Original_REC_WB.txt ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/soundimage/Sound_Phone_Original_REC.txt ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/soundimage/Sound_Phone_Original_SPK_WB.txt ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/soundimage/Sound_Phone_Original_SPK.txt ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/soundimage/Sound_Rec_Landscape.txt ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/soundimage/Sound_Rec_Portrait.txt ../../../vendor/htc/$DEVICE/proprietary
@@ -76,7 +78,7 @@ adb pull /system/etc/soundimage/srsfx_trumedia_movie.cfg ../../../vendor/htc/$DE
 adb pull /system/etc/soundimage/srsfx_trumedia_music.cfg ../../../vendor/htc/$DEVICE/proprietary
 
 # Firmware
-adb pull /system/etc/firmware/BCM4329B1_002.002.023.0589.0632.hcd ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/etc/firmware/bcm4329.hcd ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/fw_bcm4329_apsta.bin ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/fw_bcm4329.bin ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/etc/firmware/leia_pfp_470.fw ../../../vendor/htc/$DEVICE/proprietary
@@ -84,15 +86,8 @@ adb pull /system/etc/firmware/leia_pm4_470.fw ../../../vendor/htc/$DEVICE/propri
 adb pull /system/etc/firmware/vidc_1080p.fw ../../../vendor/htc/$DEVICE/proprietary
 
 # Audio
-adb pull /system/lib/liba2dp.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libacdbloader.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libacdbmapper.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudcal.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libaudcalwb.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libaudcal_nel.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libaudio.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libaudioalsa.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libaudiopolicy.so ../../../vendor/htc/$DEVICE/proprietary
 
 # Graphics
 adb pull /system/lib/libsc-a2xx.so ../../../vendor/htc/$DEVICE/proprietary
@@ -103,13 +98,23 @@ adb pull /system/lib/egl/libGLESv2_adreno200.so ../../../vendor/htc/$DEVICE/prop
 adb pull /system/lib/egl/libq3dtools_adreno200.so ../../../vendor/htc/$DEVICE/proprietary
 
 # Camera
-adb pull /system/lib/libcamera.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libcameraface.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libcamerapp.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libcamera_client.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libcameraservice.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/liboemcamera.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libOlaEngine.so ../../../vendor/htc/$DEVICE/proprietary
 
 # OMX
 adb pull /system/lib/libOmxCore.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVdec.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libOmxVenc.so ../../../vendor/htc/$DEVICE/proprietary
+
+# Chromatix
+adb pull /system/lib/libchromatix_s5k3h1gx_default_video.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k3h1gx_hfr.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k3h1gx_preview.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/libchromatix_s5k3h1gx_zsl.so ../../../vendor/htc/$DEVICE/proprietary
 
 # Libraries
 adb pull /system/lib/libC2D2.so ../../../vendor/htc/$DEVICE/proprietary
@@ -135,13 +140,14 @@ adb pull /system/lib/libqmiservices.so ../../../vendor/htc/$DEVICE/proprietary
 
 # Radio
 adb pull /system/lib/libhtc_ril.so ../../../vendor/htc/$DEVICE/proprietary
-adb pull /system/lib/libhtc_ril_switch.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/libril.so ../../../vendor/htc/$DEVICE/proprietary
 
 # Hardware files
-#adb pull /system/lib/hw/gps.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
-#adb pull /system/lib/hw/lights.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
-#adb pull /system/lib/hw/overlay.default.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/hw/audio_policy.default.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/hw/audio.primary.default.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/hw/camera.default.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/hw/gps.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
+adb pull /system/lib/hw/lights.msm8660.so ../../../vendor/htc/$DEVICE/proprietary
 adb pull /system/lib/hw/sensors.pyramid.so ../../../vendor/htc/$DEVICE/proprietary
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g > ../../../vendor/htc/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -162,24 +168,15 @@ adb pull /system/lib/hw/sensors.pyramid.so ../../../vendor/htc/$DEVICE/proprieta
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \\
-    vendor/htc/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
-    vendor/htc/__DEVICE__/proprietary/libacdbloader.so:obj/lib/libacdbloader.so \\
-    vendor/htc/__DEVICE__/proprietary/libacdbmapper.so:obj/lib/libacdbmapper.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudio.so:obj/lib/libaudio.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:obj/lib/libaudioalsa.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudiopolicy.so:obj/lib/libaudiopolicy.so \\
     vendor/htc/__DEVICE__/proprietary/libril.so:obj/lib/libril.so
 
 # Binaries
 PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/awb_camera:/system/bin/awb_camera \\
-    vendor/htc/__DEVICE__/proprietary/bma150_usr:/system/bin/bma150_usr \\
     vendor/htc/__DEVICE__/proprietary/btld:/system/bin/btld \\
     vendor/htc/__DEVICE__/proprietary/charging:/system/bin/charging \\
-    vendor/htc/__DEVICE__/proprietary/dcvs:/system/bin/dcvs \\
-    vendor/htc/__DEVICE__/proprietary/dcvsd:/system/bin/dcvsd \\
+    vendor/htc/__DEVICE__/proprietary/hciattach:/system/bin/hciattach \\
     vendor/htc/__DEVICE__/proprietary/hdmid:/system/bin/hdmid \\
-    vendor/htc/__DEVICE__/proprietary/htc_ebdlogd:/system/bin/htc_ebdlogd \\
     vendor/htc/__DEVICE__/proprietary/htcbatt:/system/bin/htcbatt \\
     vendor/htc/__DEVICE__/proprietary/ipd:/system/bin/ipd \\
     vendor/htc/__DEVICE__/proprietary/ip:/system/bin/ip \\
@@ -191,23 +188,21 @@ PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/netsharing:/system/bin/netsharing \\
     vendor/htc/__DEVICE__/proprietary/rild:/system/bin/rild \\
     vendor/htc/__DEVICE__/proprietary/rmt_storage:/system/bin/rmt_storage \\
-    vendor/htc/__DEVICE__/proprietary/ser2net:/system/bin/ser2net \\
-    vendor/htc/__DEVICE__/proprietary/sound8x60:/system/bin/sound8x60 \\
     vendor/htc/__DEVICE__/proprietary/thermald:/system/bin/thermald \\
     vendor/htc/__DEVICE__/proprietary/qmuxd:/system/bin/qmuxd \\
-    vendor/htc/__DEVICE__/proprietary/usbnet:/system/bin/usbnet \\
     vendor/htc/__DEVICE__/proprietary/wireless_modem:/system/xbin/wireless_modem
 
 # Configuration files
 PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/agps_rm:/system/etc/agps_rm \\
+    vendor/htc/__DEVICE__/proprietary/thermald.conf:/system/etc/thermald.conf \\
     vendor/htc/__DEVICE__/proprietary/vpimg:/system/etc/vpimg
 
 # Codec configs
 PRODUCT_COPY_FILES += \\
+    vendor/htc/__DEVICE__/proprietary/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \\
     vendor/htc/__DEVICE__/proprietary/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \\
     vendor/htc/__DEVICE__/proprietary/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG_DualMic.csv \\
-    vendor/htc/__DEVICE__/proprietary/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \\
     vendor/htc/__DEVICE__/proprietary/AudioBTID.csv:system/etc/AudioBTID.csv \\
     vendor/htc/__DEVICE__/proprietary/CodecDSPID.txt:system/etc/CodecDSPID.txt \\
     vendor/htc/__DEVICE__/proprietary/CodecDSPID_WB.txt:system/etc/CodecDSPID_WB.txt \\
@@ -216,11 +211,18 @@ PRODUCT_COPY_FILES += \\
 
 # Soundimage
 PRODUCT_COPY_FILES += \\
+    vendor/htc/__DEVICE__/proprietary/Sound_MFG.txt:system/etc/soundimage/Sound_MFG.txt \\
     vendor/htc/__DEVICE__/proprietary/Sound_Original_Recording.txt:system/etc/soundimage/Sound_Original_Recording.txt \\
     vendor/htc/__DEVICE__/proprietary/Sound_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \\
     vendor/htc/__DEVICE__/proprietary/Sound_Original.txt:system/etc/soundimage/Sound_Original.txt \\
+    vendor/htc/__DEVICE__/proprietary/Sound_Phone_Original_HP_LE.txt:system/etc/soundimage/Sound_Phone_Original_HP_LE.txt \\
     vendor/htc/__DEVICE__/proprietary/Sound_Phone_Original_HP.txt:system/etc/soundimage/Sound_Phone_Original_HP.txt \\
+    vendor/htc/__DEVICE__/proprietary/Sound_Phone_Original_HP_WB_LE.txt:system/etc/soundimage/Sound_Phone_Original_HP_WB_LE.txt \\
+    vendor/htc/__DEVICE__/proprietary/Sound_Phone_Original_HP_WB.txt:system/etc/soundimage/Sound_Phone_Original_HP_WB.txt \\
+    vendor/htc/__DEVICE__/proprietary/Sound_Phone_Original_REC_NEL.txt:system/etc/soundimage/Sound_Phone_Original_REC_NEL.txt \\
+    vendor/htc/__DEVICE__/proprietary/Sound_Phone_Original_REC_WB.txt:system/etc/soundimage/Sound_Phone_Original_REC_WB.txt \\
     vendor/htc/__DEVICE__/proprietary/Sound_Phone_Original_REC.txt:system/etc/soundimage/Sound_Phone_Original_REC.txt \\
+    vendor/htc/__DEVICE__/proprietary/Sound_Phone_Original_SPK_WB.txt:system/etc/soundimage/Sound_Phone_Original_SPK_WB.txt \\
     vendor/htc/__DEVICE__/proprietary/Sound_Phone_Original_SPK.txt:system/etc/soundimage/Sound_Phone_Original_SPK.txt \\
     vendor/htc/__DEVICE__/proprietary/Sound_Rec_Landscape.txt:system/etc/soundimage/Sound_Rec_Landscape.txt \\
     vendor/htc/__DEVICE__/proprietary/Sound_Rec_Portrait.txt:system/etc/soundimage/Sound_Rec_Portrait.txt \\
@@ -232,7 +234,7 @@ PRODUCT_COPY_FILES += \\
 
 # Firmware
 PRODUCT_COPY_FILES += \\
-    vendor/htc/__DEVICE__/proprietary/BCM4329B1_002.002.023.0589.0632.hcd:/system/etc/firmware/bcm4329.hcd \\
+    vendor/htc/__DEVICE__/proprietary/bcm4329.hcd:/system/etc/firmware/bcm4329.hcd \\
     vendor/htc/__DEVICE__/proprietary/fw_bcm4329_apsta.bin:/system/etc/firmware/fw_bcm4329_apsta.bin \\
     vendor/htc/__DEVICE__/proprietary/fw_bcm4329.bin:/system/etc/firmware/fw_bcm4329.bin \\
     vendor/htc/__DEVICE__/proprietary/leia_pfp_470.fw:/system/etc/firmware/leia_pfp_470.fw \\
@@ -241,15 +243,8 @@ PRODUCT_COPY_FILES += \\
 
 # Audio
 PRODUCT_COPY_FILES += \\
-    vendor/htc/__DEVICE__/proprietary/liba2dp.so:/system/lib/liba2dp.so \\
-    vendor/htc/__DEVICE__/proprietary/libacdbloader.so:/system/lib/libacdbloader.so \\
-    vendor/htc/__DEVICE__/proprietary/libacdbmapper.so:/system/lib/libacdbmapper.so \\
     vendor/htc/__DEVICE__/proprietary/libaudcal.so:/system/lib/libaudcal.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudcalwb.so:/system/lib/libaudcalwb.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudcal_nel.so:/system/lib/libaudcal_nel.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudio.so:/system/lib/libaudio.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so \\
-    vendor/htc/__DEVICE__/proprietary/libaudiopolicy.so:/system/lib/libaudiopolicy.so
+    vendor/htc/__DEVICE__/proprietary/libaudioalsa.so:/system/lib/libaudioalsa.so
 
 # Graphics
 PRODUCT_COPY_FILES += \\
@@ -262,14 +257,25 @@ PRODUCT_COPY_FILES += \\
 
 # Camera
 PRODUCT_COPY_FILES += \\
-    vendor/htc/__DEVICE__/proprietary/libcamera.so:/system/lib/libcamera.so \\
-    vendor/htc/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so
+    vendor/htc/__DEVICE__/proprietary/libcameraface.so:/system/lib/libcameraface.so \\
+    vendor/htc/__DEVICE__/proprietary/libcamerapp.so:/system/lib/libcamerapp.so \\
+    vendor/htc/__DEVICE__/proprietary/libcamera_client.so:/system/lib/libcamera_client.so \\
+    vendor/htc/__DEVICE__/proprietary/libcameraservice.so:/system/lib/libcameraservice.so \\
+    vendor/htc/__DEVICE__/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \\
+    vendor/htc/__DEVICE__/proprietary/libOlaEngine.so:/system/lib/libOlaEngine.so
 
 # OMX
 PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libOmxCore.so:/system/lib/libOmxCore.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxVdec.so:/system/lib/libOmxVdec.so \\
     vendor/htc/__DEVICE__/proprietary/libOmxVenc.so:/system/lib/libOmxVenc.so
+
+# Chromatix
+PRODUCT_COPY_FILES += \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3h1gx_default_video.so:/system/lib/libchromatix_s5k3h1gx_default_video.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3h1gx_hfr.so:/system/lib/libchromatix_s5k3h1gx_hfr.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3h1gx_preview.so:/system/lib/libchromatix_s5k3h1gx_preview.so \\
+    vendor/htc/__DEVICE__/proprietary/libchromatix_s5k3h1gx_zsl.so:/system/lib/libchromatix_s5k3h1gx_zsl.so
 
 # Libraries
 PRODUCT_COPY_FILES += \\
@@ -297,14 +303,15 @@ PRODUCT_COPY_FILES += \\
 # Radio
 PRODUCT_COPY_FILES += \\
     vendor/htc/__DEVICE__/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \\
-    vendor/htc/__DEVICE__/proprietary/libhtc_ril_switch.so:/system/lib/libhtc_ril_switch.so \\
     vendor/htc/__DEVICE__/proprietary/libril.so:/system/lib/libril.so
 
 # Hardware files
 #PRODUCT_COPY_FILES += \\
-#    vendor/htc/__DEVICE__/proprietary/gps.pyramid.so:/system/lib/hw/gps.pyramid.so \\
-#    vendor/htc/__DEVICE__/proprietary/lights.msm8660.so:/system/lib/hw/lights.msm8660.so \\
-#    vendor/htc/__DEVICE__/proprietary/overlay.default.so:/system/lib/hw/overlay.default.so \\
+    vendor/htc/__DEVICE__/proprietary/audio_policy.default.so:/system/lib/hw/audio_policy.default.so \\
+    vendor/htc/__DEVICE__/proprietary/audio.primary.default.so:/system/lib/hw/audio.primary.default.so \\
+    vendor/htc/__DEVICE__/proprietary/camera.default.so:/system/lib/hw/camera.default.so \\
+    vendor/htc/__DEVICE__/proprietary/gps.pyramid.so:/system/lib/hw/gps.pyramid.so \\
+    vendor/htc/__DEVICE__/proprietary/lights.msm8660.so:/system/lib/hw/lights.msm8660.so \\
     vendor/htc/__DEVICE__/proprietary/sensors.pyramid.so:/system/lib/hw/sensors.pyramid.so
 EOF
 
