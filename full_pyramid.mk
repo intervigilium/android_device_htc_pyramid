@@ -26,6 +26,14 @@ PRODUCT_COPY_FILES += device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.
 PRODUCT_PACKAGES += \
     Camera
 
+# Property Overrides
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.gmsversion=4.0.3_r0 \
+    ro.com.google.locationfeatures=1 \
+    ro.com.google.networklocation=1 \
+    ro.setupwizard.enable_bypass=1
+
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 # This is where we'd set a backup provider if we had one

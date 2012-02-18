@@ -1,38 +1,91 @@
+#
 # system.prop for pyramid
+#
 
-# Google
-ro.com.google.clientidbase=android-htc
-ro.com.google.gmsversion=4.0.3_r0
-ro.com.google.locationfeatures=1
-ro.com.google.networklocation=1
-ro.setupwizard.enable_bypass=1
-
-# RIL
-rild.libpath=/system/lib/libhtc_ril.so
-ro.ril.def.agps.mode=2
-ro.telephony.default_network=0
-mobiledata.interfaces=gannet0,rmnet0,rmnet1,rmnet2
-
-# Performance
-dalvik.vm.dexopt-data-only=1
-dalvik.vm.dexopt-flags=m=y
-dalvik.vm.lockprof.threshold=500
-dalvik.vm.checkjni=false
-ro.kernel.android.checkjni=0
-dalvik.vm.stack-trace-file=/data/anr/traces.txt
-
-# Display
 ro.sf.lcd_density=240
-qemu.sf.lcd_density=240
-debug.composition.type=c2d
-debug.enabletr=true
-debug.sf.hw=1
-debug.fb.rgb565=0
 
-# USB
-persist.service.adb.enable=1
-ro.debuggable=1
+debug.fb.rgb565 = 0
+debug.sf.hw = 1
+debug.composition.type = c2d
+debug.enabletr = true
+debug.qctwa.statusbar = 1
+debug.qctwa.preservebuf = 1
 
-# Filesystem
-ro.ext4fs=1
-ro.emmc=1
+rild.libpath=/system/lib/libhtc_ril.so
+# RilLibPath for Ganlite by Godel_Chen
+rild.libpath.ganlite=/system/lib/librilswitch.so
+rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
+rilswitch.ganlibpath=/system/lib/libganril.so
+
+# Modify MMS APN retry timer from 5s to 2s.
+ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
+
+# pyramid RF team request
+ro.ril.enable.dtm = 0
+ro.ril.gprsclass = 12
+ro.ril.hsdpa.category = 10
+ro.ril.hsupa.category = 6
+ro.ril.hsxpa = 3
+
+# Default network type.
+# 0 => WCDMA preferred.
+ro.telephony.default_network=0
+
+# unlock keyguard when SIM is non-inserted
+keyguard.no_require_sim=1
+
+# For the default value of agps
+ro.ril.def.agps.mode = 2
+
+# For HSDPA low throughput
+ro.ril.disable.power.collapse = 1
+
+# For Pyramid China NEL
+ro.ril.enable.prl.recognition = 1
+
+# For emmc phone storage
+ro.phone_storage = 0
+
+# Release Bluetooth HW/SW information
+ro.bt.chipset   = Broadcom BCM4329-B1
+ro.bt.stack     = Broadcom BTL-A
+ro.bt.stack.version     = 2.0.50.032
+#0x10000010010100100000011 represent bt profile list
+ro.bt.profiles  = 4270339
+
+# Properties of BTLA stack
+service.brcm.bt.activation = 0
+service.brcm.bt.srv_active = 0
+service.brcm.bt.hcid_active = 0
+service.brcm.bt.btld = 0
+service.brcm.bt.btld_pid = 0
+service.brcm.bt.avrcp_pass_thru = 0
+service.brcm.bt.avrcp_toggle = 1
+service.brcm.bt.local_name =
+service.brcm.fm.rssi = 109
+
+# For quick boot mode
+persist.sys.shutdown.mode = hibernate
+
+# Properties of Scalado Denoise param.
+postprocess.iso_midband = 400
+postprocess.denoise_level = 6
+
+# Following property will be reference by Settings.
+ro.product.processor = 1.2 GHz dualcore
+ro.product.ram = 768MB
+ro.product.display_resolution = 4.3 inch QHD resolution
+ro.product.main_camera = 8M
+ro.product.front_camera = VGA
+ro.product.bluetooth = 3.0
+ro.product.wifi = 802.11 b/g/n
+
+#Dump native call stack when an ANR happens to com.htc.launcher.
+profiler.anr_dump_native_uid = 9999
+
+# For QC perf binary hooks
+# src:vendor/qcom/proprietary/android-perf/release/lib/<CPU arch>/libqc-opt.so
+ro.vendor.extension_library=/system/lib/libqc-opt.so
+
+# System property for cabl
+ro.qualcomm.cabl=1

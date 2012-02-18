@@ -119,7 +119,7 @@ PRODUCT_PACKAGES += \
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mass_storage,adb
+    persist.sys.usb.config=mass_storage
 
 # These are the OpenMAX IL configuration files
 PRODUCT_COPY_FILES += \
