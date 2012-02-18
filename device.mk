@@ -76,9 +76,14 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8x60 \
-    gralloc.msm8x60 \
-    hwcomposer.msm8x60
+    copybit.msm8660 \
+    gralloc.msm8660 \
+    hwcomposer.msm8660 \
+    libgenlock \
+    libmemalloc \
+    liboverlay \
+    libQcomUI \
+    libtilerenderer
 
 # Hardware
 # TODO: build our own gps, lights, sensors eventually
