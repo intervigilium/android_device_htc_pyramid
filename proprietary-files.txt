@@ -1,5 +1,4 @@
 # Executable files
-bin/awb_camera
 bin/btld
 bin/charging
 bin/hdmid
@@ -8,8 +7,6 @@ bin/hciattach
 bin/ipd
 bin/ip
 bin/load-modem.sh
-bin/logcat2
-bin/lsc_camera
 bin/mpdecision
 bin/netmgrd
 bin/netsharing
@@ -29,7 +26,6 @@ etc/AdieHWCodec.csv
 etc/AIC3254_REG.csv
 etc/AIC3254_REG_DualMic.csv
 etc/AudioBTID.csv
-etc/CodecDSPID_NEL.txt
 etc/CodecDSPID.txt
 etc/CodecDSPID_WB.txt
 etc/TPA2051_CFG.csv
@@ -52,13 +48,6 @@ etc/soundimage/Sound_Phone_Original_SPK_WB.txt
 etc/soundimage/Sound_Rec_Landscape.txt
 etc/soundimage/Sound_Recording.txt
 etc/soundimage/Sound_Rec_Portrait.txt
-etc/soundimage/srs_bypass.cfg
-etc/soundimage/srsfx_trumedia_51.cfg
-etc/soundimage/srsfx_trumedia_movie.cfg
-etc/soundimage/srsfx_trumedia_music.cfg
-etc/soundimage/srsfx_trumedia_voice.cfg
-etc/soundimage/srs_geq10.cfg
-etc/soundimage/srs_global.cfg
 
 # Firmware
 etc/firmware/bcm4329.hcd
@@ -94,24 +83,10 @@ lib/libOmxVdec.so
 lib/libOmxVenc.so
 
 # Chromatix
-lib/libchromatix_imx105_default_video.so
-lib/libchromatix_imx105_preview.so
-lib/libchromatix_imx105_zsl.so
-lib/libchromatix_mt9d015_default_video.so
-lib/libchromatix_mt9d015_default_zsl.so
-lib/libchromatix_mt9d015_preview.so
-lib/libchromatix_ov8830_default_video.so
-lib/libchromatix_ov8830_hfr.so
-lib/libchromatix_ov8830_preview.so
-lib/libchromatix_ov8830_zsl.so
 lib/libchromatix_s5k3h1gx_default_video.so
 lib/libchromatix_s5k3h1gx_hfr.so
 lib/libchromatix_s5k3h1gx_preview.so
 lib/libchromatix_s5k3h1gx_zsl.so
-lib/libchromatix_s5k3h2yx_default_video.so
-lib/libchromatix_s5k3h2yx_hfr.so
-lib/libchromatix_s5k3h2yx_preview.so
-lib/libchromatix_s5k3h2yx_zsl.so
 
 # Libraries
 lib/libC2D2.so
