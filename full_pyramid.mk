@@ -20,21 +20,10 @@
 #
 
 # Get the long list of APNs
-PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
-
-# Some overrides
-PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \
-    ro.com.google.clientidbase=android-htc \
-    ro.com.google.gmsversion=4.0.3_r0 \
-    ro.com.google.locationfeatures=1 \
-    ro.com.google.networklocation=1 \
-    ro.setupwizard.enable_bypass=1 \
-    dalvik.vm.lockprof.threshold=500 \
-    dalvik.vm.dexopt-flags=m=y
+PRODUCT_COPY_FILES += device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 
 # Camera
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
     Camera
 
 # Inherit from those products. Most specific first.
