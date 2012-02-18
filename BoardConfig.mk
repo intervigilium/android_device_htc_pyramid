@@ -88,6 +88,9 @@ TARGET_USES_C2D_COMPOSITION := true
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/htc/pyramid/egl.cfg
 
+# USB
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
+
 # Wi-Fi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
