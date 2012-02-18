@@ -1,12 +1,17 @@
 Ice Cream Sandwich Device tree for HTC Pyramid (Sensation)
 
+Kernel:
+-HTC 3.0.16 kernel from 3.25 leak
+
 Current issues:
--kernel is based off Tiamat source, but USB function is not working
--proximity sensor is still using cm3602 code, not cm3628 code
--GPS and audio are untested
+-proximity sensor, lights code doesn't work yet
+-audio and GPS untested
+-bluetooth doesn't work
+-video recording doesn't work
 
 Credits goes to:
 Cyanogenmod team
 Evervolv team
 Tiamat kernel team
+OpenSensation team
 toastcfh
