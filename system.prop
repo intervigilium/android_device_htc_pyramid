@@ -1,20 +1,22 @@
 # system.prop for pyramid
 #
 
+# RIL
 rild.libpath=/system/lib/libhtc_ril.so
+
+# LCD
 ro.sf.lcd_density=240
+debug.fb.rgb565=0
 
-debug.fb.rgb565 = 0
-
-#C2D
-debug.composition.type = c2d
+# C2D
+debug.composition.type=c2d
 
 # This is a high density device with more memory, so larger vm heaps for it.
 # Change to 32m, due to 2.3.3 GB already change to 32m
 dalvik.vm.heapsize=32m
 
 # For the default value of agps
-ro.ril.def.agps.mode = 2
+ro.ril.def.agps.mode=2
 
 # For HSDPA low throughput
 ro.ril.disable.power.collapse=1
