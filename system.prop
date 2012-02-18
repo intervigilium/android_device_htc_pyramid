@@ -15,6 +15,7 @@ mobiledata.interfaces=gannet0,rmnet0,rmnet1,rmnet2
 
 # Performance
 dalvik.vm.dexopt-data-only=1
+dalvik.vm.dexopt-flags=m=y
 dalvik.vm.lockprof.threshold=500
 dalvik.vm.checkjni=false
 ro.kernel.android.checkjni=0
