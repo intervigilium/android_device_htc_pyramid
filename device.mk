@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES += \
 # This is wthe other half of the device-specific product definition
 # file that takes care of the aspects that require proprietary drivers that
 # aren't commonly available is.
-$(call inherit-product-if-exists, vendor/htc/pyramid/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
 
 # This is the hardware-specific overlay, which points to the location
 # of hardware-specific resource overrides, typically the frameworks and
