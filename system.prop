@@ -40,9 +40,6 @@ ro.ril.def.agps.mode = 2
 # For HSDPA low throughput
 ro.ril.disable.power.collapse = 1
 
-# For Pyramid China NEL
-ro.ril.enable.prl.recognition = 1
-
 # For emmc phone storage
 ro.phone_storage = 0
 
@@ -79,13 +76,6 @@ ro.product.main_camera = 8M
 ro.product.front_camera = VGA
 ro.product.bluetooth = 3.0
 ro.product.wifi = 802.11 b/g/n
-
-#Dump native call stack when an ANR happens to com.htc.launcher.
-profiler.anr_dump_native_uid = 9999
-
-# For QC perf binary hooks
-# src:vendor/qcom/proprietary/android-perf/release/lib/<CPU arch>/libqc-opt.so
-ro.vendor.extension_library=/system/lib/libqc-opt.so
 
 # System property for cabl
 ro.qualcomm.cabl=1
