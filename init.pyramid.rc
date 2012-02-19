@@ -182,10 +182,10 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
     oneshot
     keycodes 114 115
 
-#service hciattach /system/bin/brcm_patchram_plus -d --enable_hci --baudrate 3000000 --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
-#    user bluetooth
-#    group bluetooth net_bt_admin
-#    disabled
+service hciattach /system/bin/brcm_patchram_plus -d --enable_hci --baudrate 3000000 --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
 
 # for USB internet sharing
 service udhcpd /system/bin/udhcpd

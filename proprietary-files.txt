@@ -1,9 +1,7 @@
 # Executable files
-bin/btld
 bin/charging
 bin/hdmid
 bin/htcbatt
-bin/hciattach
 bin/ipd
 bin/ip
 bin/load-modem.sh
