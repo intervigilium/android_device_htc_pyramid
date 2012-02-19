@@ -86,8 +86,8 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Graphics
 #TARGET_QCOM_HDMI_OUT := true
-#TARGET_HAVE_BYPASS := false
-#TARGET_USES_OVERLAY := false
+TARGET_HAVE_BYPASS := true
+TARGET_USES_OVERLAY := true
 TARGET_USES_GENLOCK := true
 TARGET_USES_C2D_COMPOSITION := true
 USE_OPENGL_RENDERER := true
@@ -104,6 +104,7 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
 WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/fw_bcm4329.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcm4329/parameters/fwpath"
 WIFI_DRIVER_MODULE_NAME     := "bcm4329"
 WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/firmware/fw_bcm4329.bin nvram_path=/proc/calibration iface_name=wlan"
 
