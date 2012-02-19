@@ -30,6 +30,7 @@ ro.ril.hsxpa = 3
 # Default network type.
 # 0 => WCDMA preferred.
 ro.telephony.default_network=0
+ro.telephony.ril.v3=signalstrength
 
 # unlock keyguard when SIM is non-inserted
 keyguard.no_require_sim=1
