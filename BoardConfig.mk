@@ -37,7 +37,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=59 -DQCOM_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE
 
 # Architecture
 TARGET_CPU_ABI := armeabi-v7a
@@ -75,17 +75,17 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Camera
-#USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 # ifeq ($(USE_CAMERA_STUB),false)
 # BOARD_CAMERA_LIBRARIES := libcamera
 # endif
 
 # Memory allocation
-#TARGET_GRALLOC_USES_ASHMEM := false
-#TARGET_USES_ION := false
+TARGET_GRALLOC_USES_ASHMEM := false
+TARGET_USES_ION := false
 
 # Graphics
-#TARGET_QCOM_HDMI_OUT := true
+TARGET_QCOM_HDMI_OUT := true
 TARGET_HAVE_BYPASS := true
 TARGET_USES_SF_BYPASS := true
 TARGET_USES_OVERLAY := true
