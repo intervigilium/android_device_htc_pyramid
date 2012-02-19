@@ -5,9 +5,10 @@ Kernel:
 
 Current issues:
 -proximity sensor, lights code doesn't work yet
--audio and GPS untested
 -bluetooth doesn't work
+-video artifacts
 -video recording doesn't work
+-video playback can't keep up, perhaps missing HW acceleration?
 
 Credits goes to:
 Cyanogenmod team
