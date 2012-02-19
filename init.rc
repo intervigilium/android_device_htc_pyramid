@@ -138,9 +138,6 @@ on post-fs-data
     chown system system /data
     chmod 0771 /data
 
-    # create htcfs
-    mkdir /data/htcfs 0750 media media
-
     # Create dump dir and collect dumps.
     # Do this before we mount cache so eventually we can use cache for
     # storing dumps on platforms which do not have a dedicated dump partition.
@@ -203,10 +200,6 @@ on post-fs-data
     mkdir /data/secure 0755 system system
     mkdir /data/secure/data 0755 system system
     mount tmpfs tmpfs /data/secure/data mode=0755,gid=1000
-
-    # HTC add: for customization wizard folder
-    mkdir /data/data/cw 0770 root cw_access
-    mkdir /data/data/cwtemp 0770 root cw_access
 
     # HTC add: double check the perms of /data/data for already existed case
     chown system system /data/data
@@ -521,13 +514,6 @@ service media /system/bin/mediaserver
     user media
     group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc cw_access
     ioprio rt 4
-
-service fusermount /system/bin/fusermount -u /data/htcfs
-    disabled
-    oneshot
-
-service htcfs /system/bin/htcfs /data/htcfs -f -o allow_other
-    onrestart restart fusermount
 
 service bootanim /system/bin/bootanimation
     class main
