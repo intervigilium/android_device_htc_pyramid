@@ -201,17 +201,6 @@ on post-fs-data
     mkdir /data/secure/data 0755 system system
     mount tmpfs tmpfs /data/secure/data mode=0755,gid=1000
 
-    # HTC add: double check the perms of /data/data for already existed case
-    chown system system /data/data
-    chmod 0771 /data/data
-    chmod 0660 /data/data/com.android.providers.settings/databases/settings.db-wal
-    chmod 0660 /data/data/com.android.providers.settings/databases/settings.db-shm
-    chmod 0660 /data/data/com.android.providers.settings/databases/settings.db-journal
-
-    # HTC add: double check the perms of /data/data/recovery for already existed case
-    chown root recvy_access /data/data/recovery
-    chmod 0775 /data/data/recovery
-
     chown system system /sys/class/graphics/fb0/ratelimit
 
     # If there is no fs-post-data action in the init.<device>.rc file, you
@@ -341,10 +330,6 @@ on boot
     chown system system /sys/class/switch/dock/dmb_wakeup
 # HTC SSD Peripheral UI - END
 
-# HTC SSD Peripheral Touch - START
-    chown system system /sys/android_touch/unlock
-# HTC SSD Peripheral UI -END
-
 #set diag permissions
     chown radio radio /dev/diag
     chown radio radio /dev/diag_mdm
@@ -361,20 +346,13 @@ on boot
 #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
     setprop net.tcp.buffersize.default 4096,87380,110208,4096,16384,110208
     setprop net.tcp.buffersize.wifi    4095,87380,110208,4096,16384,110208
-#    setprop net.tcp.buffersize.hsdpa   4094,87380,393216,4096,16384,110208
-#    setprop net.tcp.buffersize.umts    4094,87380,393216,4096,16384,110208
-#    setprop net.tcp.buffersize.edge    4093,26280,393216,4096,16384,35040
-#    setprop net.tcp.buffersize.gprs    4092,8760,393216,4096,8760,11680
-#    setprop net.tcp.buffersize.lte     4096,221184,3461120,4096,221184,3461120
-#    setprop net.tcp.buffersize.evdo_b  4094,87380,262144,4096,16384,262144
-#    setprop net.tcp.buffersize.wimax   4096,221184,524288,4096,16384,110208
-     setprop net.tcp.buffersize.hsdpa   4094,87380,704512,4096,16384,110208
-     setprop net.tcp.buffersize.umts    4094,87380,704512,4096,16384,110208
-     setprop net.tcp.buffersize.edge    4093,26280,704512,4096,16384,35040
-     setprop net.tcp.buffersize.gprs    4092,8760,704512,4096,8760,11680
-     setprop net.tcp.buffersize.lte     4096,221184,3461120,4096,221184,3461120
-     setprop net.tcp.buffersize.evdo_b  4094,87380,262144,4096,16384,262144
-     setprop net.tcp.buffersize.wimax   4096,221184,524288,4096,16384,110208
+    setprop net.tcp.buffersize.hsdpa   4094,87380,704512,4096,16384,110208
+    setprop net.tcp.buffersize.umts    4094,87380,704512,4096,16384,110208
+    setprop net.tcp.buffersize.edge    4093,26280,704512,4096,16384,35040
+    setprop net.tcp.buffersize.gprs    4092,8760,704512,4096,8760,11680
+    setprop net.tcp.buffersize.lte     4096,221184,3461120,4096,221184,3461120
+    setprop net.tcp.buffersize.evdo_b  4094,87380,262144,4096,16384,262144
+    setprop net.tcp.buffersize.wimax   4096,221184,524288,4096,16384,110208
 
     # Assign TCP buffer thresholds to be ceiling value of technology maximums
     # Increased technology maximums should be reflected here.
