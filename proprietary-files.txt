@@ -68,12 +68,13 @@ lib/egl/libGLESv2_adreno200.so
 lib/egl/libq3dtools_adreno200.so
 
 # Camera
+lib/libcamera_client.so
 lib/libcameraface.so
 lib/libcamerapp.so
-lib/libcamera_client.so
 lib/libcameraservice.so
 lib/liboemcamera.so
 lib/libOlaEngine.so
+lib/libposteffect.so
 
 # OMX
 lib/libOmxCore.so
@@ -90,24 +91,23 @@ lib/libchromatix_s5k3h1gx_zsl.so
 lib/libC2D2.so
 lib/libdiag.so
 lib/libdll.so
-lib/libdsutils.so
 lib/libdsi_netctrl.so
+lib/libdsutils.so
 lib/libgemini.so
 lib/libgsl.so
 lib/libhtc_acoustic.so
 lib/libidl.so
 lib/libmmipl.so
 lib/libmmjpeg.so
-lib/libmpl.so
 lib/libmpl_jni.so
-lib/libmlplatform.so
+lib/libmpl.so
 lib/libmllite.so
+lib/libmlplatform.so
 lib/libnetmgr.so
 lib/libOpenVG.so
-lib/libposteffect.so
 lib/libqdp.so
-lib/libqmi.so
 lib/libqmiservices.so
+lib/libqmi.so
 
 # Radio
 lib/libhtc_ril.so
