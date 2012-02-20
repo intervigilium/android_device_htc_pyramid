@@ -104,6 +104,7 @@ lib/libmlplatform.so
 lib/libmllite.so
 lib/libnetmgr.so
 lib/libOpenVG.so
+lib/libposteffect.so
 lib/libqdp.so
 lib/libqmi.so
 lib/libqmiservices.so
