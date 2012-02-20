@@ -74,6 +74,7 @@ lib/libOlaEngine.so
 lib/libposteffect.so
 
 # OMX
+lib/libdivxdrmdecrypt.so
 lib/libOmxCore.so
 lib/libOmxVdec.so
 lib/libOmxVenc.so
