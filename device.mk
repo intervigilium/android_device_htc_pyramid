@@ -87,9 +87,9 @@ PRODUCT_PACKAGES += \
 
 # Hardware
 # TODO: build our own gps, lights, sensors eventually
-#PRODUCT_PACKAGES += \
-#    gps.pyramid \
-#    lights.pyramid \
+PRODUCT_PACKAGES += \
+    gps.pyramid \
+    lights.pyramid
 #    sensors.pyramid \
 #    camera.pyramid
 

@@ -116,6 +116,4 @@ lib/libril.so
 lib/hw/audio_policy.default.so
 lib/hw/audio.primary.default.so
 lib/hw/camera.default.so
-lib/hw/gps.pyramid.so
-lib/hw/lights.msm8660.so
 lib/hw/sensors.pyramid.so
