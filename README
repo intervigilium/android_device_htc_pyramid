@@ -4,11 +4,10 @@ Kernel:
 -HTC 3.0.16 kernel from 3.25 leak
 
 Current issues:
--proximity sensor, lights code doesn't work yet
+-Invensys MPU code doesn't work yet
 -bluetooth doesn't work
--video artifacts
 -video recording doesn't work
--video playback can't keep up, perhaps missing HW acceleration?
+-video playback not HW accelerated, issue lies with stagefright/Omx libs
 
 Credits goes to:
 Cyanogenmod team
