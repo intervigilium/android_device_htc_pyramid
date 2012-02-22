@@ -12,6 +12,8 @@
  * GNU General Public License for more details.
  *
  */
+ 
+#include <linux/ioctl.h>
 
 #ifndef _ANDROID_PMEM_H_
 #define _ANDROID_PMEM_H_
