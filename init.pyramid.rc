@@ -5,13 +5,13 @@ on emmc
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
     devwait emmc@system
-    mount ext4 emmc@system /system ro noatime
+    mount ext4 emmc@system /system ro noatime nodiratime barrier=1
     devwait emmc@userdata
-    mount ext4 emmc@userdata /data noatime nosuid nodev noauto_da_alloc
+    mount ext4 emmc@userdata /data noatime nodiratime nosuid nodev barrier=1 noauto_da_alloc
     devwait emmc@cache
-    mount ext4 emmc@cache /cache noatime nosuid nodev
+    mount ext4 emmc@cache /cache noatime nodiratime nosuid nodev barrier=1
     devwait emmc@devlog
-    mount ext4 emmc@devlog /devlog noatime nosuid nodev
+    mount ext4 emmc@devlog /devlog noatime nodiratime nosuid nodev barrier=1
 
     #8x60: mount radio partition and create links for modem/q6 firmwares
     mkdir /vendor               0771 system system
@@ -22,17 +22,17 @@ on emmc
     devwait emmc@adsp
     mount vfat emmc@radio /vendor/firmware/misc ro shortname=lower
     mount vfat emmc@adsp /vendor/firmware/adsp ro shortname=lower
-    symlink /vendor/firmware/misc/q6.b09 /vendor/firmware/q6.b09
-    symlink /vendor/firmware/misc/q6.b08 /vendor/firmware/q6.b08
-    symlink /vendor/firmware/misc/q6.b07 /vendor/firmware/q6.b07
-    symlink /vendor/firmware/misc/q6.b06 /vendor/firmware/q6.b06
-    symlink /vendor/firmware/misc/q6.b05 /vendor/firmware/q6.b05
-    symlink /vendor/firmware/misc/q6.b04 /vendor/firmware/q6.b04
-    symlink /vendor/firmware/misc/q6.b03 /vendor/firmware/q6.b03
-    symlink /vendor/firmware/misc/q6.b02 /vendor/firmware/q6.b02
-    symlink /vendor/firmware/misc/q6.b01 /vendor/firmware/q6.b01
-    symlink /vendor/firmware/misc/q6.b00 /vendor/firmware/q6.b00
-    symlink /vendor/firmware/misc/q6.mdt /vendor/firmware/q6.mdt
+    symlink /vendor/firmware/adsp/q6.b09 /vendor/firmware/q6.b09
+    symlink /vendor/firmware/adsp/q6.b08 /vendor/firmware/q6.b08
+    symlink /vendor/firmware/adsp/q6.b07 /vendor/firmware/q6.b07
+    symlink /vendor/firmware/adsp/q6.b06 /vendor/firmware/q6.b06
+    symlink /vendor/firmware/adsp/q6.b05 /vendor/firmware/q6.b05
+    symlink /vendor/firmware/adsp/q6.b04 /vendor/firmware/q6.b04
+    symlink /vendor/firmware/adsp/q6.b03 /vendor/firmware/q6.b03
+    symlink /vendor/firmware/adsp/q6.b02 /vendor/firmware/q6.b02
+    symlink /vendor/firmware/adsp/q6.b01 /vendor/firmware/q6.b01
+    symlink /vendor/firmware/adsp/q6.b00 /vendor/firmware/q6.b00
+    symlink /vendor/firmware/adsp/q6.mdt /vendor/firmware/q6.mdt
     symlink /vendor/firmware/misc/modem.b09 /vendor/firmware/modem.b09
     symlink /vendor/firmware/misc/modem.b08 /vendor/firmware/modem.b08
     symlink /vendor/firmware/misc/modem.b07 /vendor/firmware/modem.b07
@@ -62,26 +62,18 @@ on init
     chown system system /dev/timerirq
 
 on boot
+# + SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
     mkdir /data/radio 0770 radio radio
-    mkdir /data/misc 1771 system misc
-    mkdir /data/misc/bluetoothd 0770 bluetooth bluetooth
-    mkdir /data/misc/keystore 0700 keystore keystore
-    mkdir /data/misc/vpn 0770 system system
-    mkdir /data/misc/vpn/profiles 0770 system system
+# - SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
-    setprop softap.interface wl0.1
 
     # bluetooth power up/down interface
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chmod 0660                /sys/class/rfkill/rfkill0/state
-
-    # Bluetooth MAC address path
-    chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddress
-    setprop ro.bt.bdaddr_path /sys/module/htc_bdaddress/parameters/bdaddress
 
     # for modem link
     chown system system /sys/module/serial/parameters/modem_enabled
@@ -101,19 +93,6 @@ on boot
     chown system system /sys/class/optical_sensors/proximity/ps_kadc
     chown system system /sys/class/optical_sensors/proximity/ps_led
     chown system system /sys/class/optical_sensors/proximity/ps_test_mode
-
-    chown system camera /sys/class/leds/flashlight/brightness
-    chmod 0660 /sys/class/leds/flashlight/brightness
-
-    # Permissions for Camera
-    # TODO: set these in ueventd perhaps?
-    chmod 0666 /dev/msm_camera/config0
-    chmod 0666 /dev/msm_camera/control0
-    chmod 0666 /dev/msm_camera/frame0
-    chmod 0666 /dev/msm_camera/config1
-    chmod 0666 /dev/msm_camera/control1
-    chmod 0666 /dev/msm_camera/frame1
-    chmod 0666 /dev/graphics/fb0
 
     # for simlock
     chown radio radio /dev/simlock
@@ -143,15 +122,16 @@ on boot
     chmod 0660 /dev/htcdrm
 
     # Overwrite framework low memory killer setting
-    write /sys/module/lowmemorykiller/parameters/minfree 2048,3072,4096,6144,8192,12288
-    write /sys/module/lowmemorykiller/parameters/minfile 2048,3072,4096,6144,8192,12288
+    write /sys/module/lowmemorykiller/parameters/adj 0,1,2,4,7,15
+    write /sys/module/lowmemorykiller/parameters/minfree 6379,8125,9871,11919,20497,25282
+    write /sys/module/lowmemorykiller/parameters/minfile 6379,8125,9871,11919,20497,25282
     write /sys/module/lowmemorykiller/parameters/check_filepages 1
 
 # Force loading of modem and Q6 images
 service load-modem /system/bin/load-modem.sh
     oneshot
 
-service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf -puse_p2p_group_interface=1
+service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
 #   we will start as root and wpa_supplicant will switch to user wifi
 #   after setting up the capabilities required for WEXT
 #   user wifi
@@ -182,10 +162,10 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
     oneshot
     keycodes 114 115
 
-service hciattach /system/bin/brcm_patchram_plus -d --enable_hci --baudrate 3000000 --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
+#service hciattach /system/bin/brcm_patchram_plus --enable_hci --patchram /etc/firmware/bcm4329.hcd /dev/ttyHS0
+#    user bluetooth
+#    group bluetooth net_bt_admin
+#    disabled
 
 # for USB internet sharing
 service udhcpd /system/bin/udhcpd
@@ -249,7 +229,7 @@ service hdmid /system/bin/hdmid
 service htcbatt /system/bin/htcbatt
     user root
 
-service mpdecision /system/bin/mpdecision --Nw 5.4 --Ts 350 --no_sleep --avg_comp --single_core_while_panel_off
+service mpdecision /system/bin/mpdecision --no_sleep --avg_comp --single_core_while_panel_off
     user root
     disabled
 
