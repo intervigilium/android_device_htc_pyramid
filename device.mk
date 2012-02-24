@@ -110,6 +110,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstagefrighthw \
     librs_jni
+#    libdivxdrmdecrypt \
+#    libOmxCore \
 #    libOmxVenc \
 #    libOmxVdec
 
