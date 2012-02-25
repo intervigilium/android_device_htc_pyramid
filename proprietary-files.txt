@@ -73,12 +73,6 @@ lib/liboemcamera.so
 lib/libOlaEngine.so
 lib/libposteffect.so
 
-# OMX
-lib/libdivxdrmdecrypt.so
-lib/libOmxCore.so
-lib/libOmxVdec.so
-lib/libOmxVenc.so
-
 # Chromatix
 lib/libchromatix_s5k3h1gx_default_video.so
 lib/libchromatix_s5k3h1gx_hfr.so

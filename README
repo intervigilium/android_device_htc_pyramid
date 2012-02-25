@@ -7,7 +7,7 @@ Current issues:
 -Invensys MPU code doesn't work yet
 -bluetooth doesn't work
 -video recording doesn't work
--video playback not HW accelerated, issue lies with stagefright/Omx libs
+-video playback for mpeg4 videos, h264 seems to work fine
 
 Credits goes to:
 Cyanogenmod team

@@ -109,11 +109,11 @@ PRODUCT_PACKAGES += \
 # TODO: build libOmxVenc, libOmxVdec eventually
 PRODUCT_PACKAGES += \
     libstagefrighthw \
-    librs_jni
-#    libdivxdrmdecrypt \
-#    libOmxCore \
-#    libOmxVenc \
-#    libOmxVdec
+    librs_jni \
+    libdivxdrmdecrypt \
+    libOmxCore \
+    libOmxVenc \
+    libOmxVdec
 
 # USB
 PRODUCT_PACKAGES += \
