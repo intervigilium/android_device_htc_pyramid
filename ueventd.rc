@@ -50,7 +50,7 @@
 /dev/msm_vidc_dec         0660   system     audio
 /dev/msm_vidc_enc         0660   system     audio
 /dev/msm_vidc_reg         0660   system     audio
-/dev/gemini*	          0660   system     audio
+/dev/gemini*              0660   system     audio
 /dev/pmem_camera*         0660   system     camera
 /dev/oncrpc/*             0660   root       qcom_oncrpc
 /dev/adsp/*               0660   system     audio
@@ -124,9 +124,10 @@
 /dev/ttyHSL1              0660   system     system
 /dev/tty_sdio_00          0660   system     system
 /dev/usb_accessory        0660   root       usb
-/dev/video*	          0660   system     camera
+/dev/video*               0660   system     camera
 /dev/tun                  0660   system     vpn
-#regular apps need to be able to open ion
+
+# regular apps need to be able to open ion
 /dev/ion                  0664   system     system
 
 # CDMA radio interface MUX
@@ -136,11 +137,13 @@
 # sysfs properties
 /sys/devices/virtual/input/input*   enable      0660  root   input
 /sys/devices/virtual/input/input*   poll_delay  0660  root   input
-#permissions for video
+
+# permissions for video
 /dev/msm_vidc_reg         0660  system       audio
 /dev/msm_vidc_dec         0660  system       audio
 /dev/msm_vidc_enc         0660  system       audio
-#permissions for audio
+
+# permissions for audio
 /dev/msm_amrnb            0660  system       audio
 /dev/msm_amrwb            0660  system       audio
 /dev/msm_aac              0660  system       audio
@@ -160,5 +163,6 @@
 /dev/msm_amrnb_in         0640  system       audio
 /sys/devices/virtual/usb_composite/*   enable      0664  root   system
 /sys/devices/virtual/smdpkt/smdcntl*       open_timeout   0664 radio radio
-#permissions for sensors
+
+# permissions for sensors
 /dev/msm_dsps             0660  system       system
