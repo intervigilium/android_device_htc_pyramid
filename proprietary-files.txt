@@ -53,6 +53,8 @@ etc/firmware/leia_pm4_470.fw
 etc/firmware/vidc_1080p.fw
 
 # Audio
+lib/libacdbloader.so
+lib/libacdbmapper.so
 lib/libaudcal.so
 lib/libaudioalsa.so
 

@@ -66,8 +66,9 @@ BOARD_PROVIDES_LIBRIL := true
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 
 # Audio
-BOARD_USES_AUDIO_LEGACY := true
+BOARD_USES_AUDIO_LEGACY := false
 BOARD_USES_GENERIC_AUDIO := false
+# TODO: logic for this flag seems reversed, confirm?
 #TARGET_PROVIDES_LIBAUDIO := false
 
 # Bluetooth

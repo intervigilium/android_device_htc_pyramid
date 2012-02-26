@@ -101,9 +101,9 @@ PRODUCT_PACKAGES += \
 # TODO: build audio_policy, audio.primary eventually
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    libaudioutils
-#    audio_policy.pyramid \
-#    audio.primary.pyramid \
+    libaudioutils \
+    audio_policy.pyramid \
+    audio.primary.pyramid
 
 # Media
 # TODO: build libOmxVenc, libOmxVdec eventually
