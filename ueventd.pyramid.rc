@@ -14,8 +14,12 @@
 /dev/adsp                 0660   system     audio
 /dev/pmem_audio           0660   system     audio
 /dev/tpa2051d3            0660   system     audio
+
 # for modem link
 /sys/module/serial/parameters/modem_enabled    0600    system  system
 /dev/ttyHSUSB0                                 0600    system  system
 /dev/ttySA0                                    0600    system  system
 /dev/smd9                                      0600    system  system
+
+# GPS requires rpc permissions
+/dev/oncrpc/*             0660   radio      system
