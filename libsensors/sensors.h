@@ -43,7 +43,7 @@ __BEGIN_DECLS
  * The SENSORS Module
  */
 
-/* the CM3628 is a binary proximity sensor that triggers around 9 cm on
+/* the CM3602 is a binary proximity sensor that triggers around 9 cm on
  * this hardware */
 #define PROXIMITY_THRESHOLD_CM  9.0f
 

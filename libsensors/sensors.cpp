@@ -43,11 +43,11 @@
 /* The SENSORS Module */
 #define LOCAL_SENSORS (2)
 static struct sensor_t sSensorList[] = {
-        { "CM3628 Light sensor",
+        { "CM3602 Light sensor",
                 "Capella Microsystems",
                 1, SENSORS_LIGHT_HANDLE,
                 SENSOR_TYPE_LIGHT, 10240.0f, 1.0f, 0.5f, 0, { } },
-        { "CM3628 Proximity sensor",
+        { "CM3602 Proximity sensor",
                 "Capella Microsystems",
                 1, SENSORS_PROXIMITY_HANDLE,
                 SENSOR_TYPE_PROXIMITY,
@@ -76,7 +76,7 @@ struct sensors_module_t HAL_MODULE_INFO_SYM = {
         version_major: 1,
         version_minor: 0,
         id: SENSORS_HARDWARE_MODULE_ID,
-        name: "MPU3050 & CM3628 Sensors Module",
+        name: "MPU3050 & CM3602 Sensors Module",
         author: "The Android Open Source Project",
         methods: &sensors_module_methods,
         dso: 0,
