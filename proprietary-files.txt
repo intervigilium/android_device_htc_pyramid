@@ -108,7 +108,5 @@ lib/libhtc_ril.so
 lib/libril.so
 
 # Hardware files
-lib/hw/audio_policy.default.so
-lib/hw/audio.primary.default.so
 lib/hw/camera.default.so
 lib/hw/sensors.pyramid.so

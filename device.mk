@@ -98,12 +98,11 @@ PRODUCT_PACKAGES += \
     libcamera
 
 # Audio
-# TODO: build audio_policy, audio.primary eventually
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
+    audio_policy.msm8660 \
+    audio.primary.msm8660 \
     libaudioutils
-#    audio_policy.pyramid \
-#    audio.primary.pyramid
 
 # Media
 # TODO: build libOmxVenc, libOmxVdec eventually
