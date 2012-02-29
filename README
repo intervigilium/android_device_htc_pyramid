@@ -1,17 +1,27 @@
 Ice Cream Sandwich Device tree for HTC Pyramid (Sensation)
 
 Kernel:
--HTC 3.0.16 kernel from 3.25 leak
+-HTC 3.0.16 kernel from 3.30 leak
 
 Current issues:
--Invensys MPU code doesn't work yet
+-wifi tethering doesn't work
 -bluetooth doesn't work
--video recording doesn't work
--video playback for mpeg4 videos, h264 seems to work fine
+-camcorder doesn't work
+
+Misc issues:
+-Invensys MPU cannot be built from source since we do not have access to
+ HTC kernel module IOCTLs, using sensors.pyramid from 3.30 leak
+-Audio built from source, but there seems to be problems with voice search,
+ voice text input, etc
+-Video playback is possible using 3.30 leak OMX libs, but OMX from source
+ results in a segfault
+-It should be theoretically possible for wifi calling to work, since the
+ kineto.ko module exists
+
 
 Credits goes to:
 Cyanogenmod team
 Evervolv team
 Tiamat kernel team
-OpenSensation team
+OpenSensation, including elelinux, vorbeth
 toastcfh
