@@ -179,7 +179,7 @@ PRODUCT_LOCALES += hdpi
 PRODUCT_AAPT_CONFIG := normal hdpi
 
 ifeq ($(TARGET_PREBUILT_WIFI_MODULE),)
-LOCAL_WIFI_MODULE := device/htc/pyramid/bcm4329.ko
+LOCAL_WIFI_MODULE := device/htc/pyramid/modules/bcm4329.ko
 else
 LOCAL_WIFI_MODULE := $(TARGET_PREBUILT_WIFI_MODULE)
 endif
@@ -188,7 +188,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_WIFI_MODULE):system/lib/modules/bcm4329.ko
 
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/kineto_gan.ko:system/lib/modules/kineto_gan.ko
+    device/htc/pyramid/modules/kineto_gan.ko:system/lib/modules/kineto_gan.ko
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/pyramid/kernel
