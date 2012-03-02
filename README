@@ -13,11 +13,17 @@ Misc issues:
  HTC kernel module IOCTLs, using sensors.pyramid from 3.30 leak
 -Audio built from source, but there seems to be problems with voice search,
  voice text input, etc
--Video playback is possible using 3.30 leak OMX libs, but OMX from source
- results in a segfault
+-Video playback is possible using 3.30 leak OMX libs or using ics-omx
+ frameworks/base branch, but OMX from ics-test branch results in a segfault
 -It should be theoretically possible for wifi calling to work, since the
  kineto.ko module exists
 
+Building:
+-frameworks/base, branch ics-omx
+-hardware/libhardware, branch ics-chocolate
+-hardware/msm7k, branch ics-test
+-hardware/qcom/display, branch ics-chocolate
+-hardware/qcom/media, branch ics-test
 
 Credits goes to:
 Cyanogenmod team
