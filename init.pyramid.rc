@@ -167,6 +167,15 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
 #    group bluetooth net_bt_admin
 #    disabled
 
+# Make sure we startup btld before hcid
+# Set target address to emulator host loopback IF
+# Limit baudrate to 460800 to ensure reliable uart operation
+service btld /system/bin/btld -lpm 1 -hb 3000000
+    user root
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
 # for USB internet sharing
 service udhcpd /system/bin/udhcpd
     disabled
@@ -211,6 +220,13 @@ service zchgd_offmode /system/bin/zchgd -pseudooffmode
 
 service zchgd_onmode /system/bin/zchgd -onmode
     user root
+    oneshot
+
+service clockd /system/bin/clockd
+
+service qb_offmode_alarm /system/bin/qb_offmode_alarm
+    user root
+    disabled
     oneshot
 
 # + SSD_RIL: Otis: from Qualcomm QMI and Netmgrd
