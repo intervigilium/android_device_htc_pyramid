@@ -53,8 +53,6 @@ etc/firmware/leia_pm4_470.fw
 etc/firmware/vidc_1080p.fw
 
 # Audio
-lib/libacdbloader.so
-lib/libacdbmapper.so
 lib/libaudcal.so
 lib/libaudioalsa.so
 
@@ -108,5 +106,7 @@ lib/libhtc_ril.so
 lib/libril.so
 
 # Hardware files
+lib/hw/audio.primary.default.so
+lib/hw/audio_policy.default.so
 lib/hw/camera.default.so
 lib/hw/sensors.pyramid.so

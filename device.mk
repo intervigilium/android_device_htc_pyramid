@@ -86,7 +86,7 @@ PRODUCT_PACKAGES += \
     libtilerenderer
 
 # Hardware
-# TODO: build our own gps, lights, sensors eventually
+# TODO: build our own camera, sensors eventually
 PRODUCT_PACKAGES += \
     gps.pyramid \
     lights.pyramid
@@ -100,8 +100,6 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio_policy.msm8660 \
-    audio.primary.msm8660 \
     libaudioutils
 
 # Media
