@@ -11,6 +11,7 @@ Current issues:
 Misc issues:
 -Invensys MPU cannot be built from source since we do not have access to
  HTC kernel module IOCTLs, using sensors.pyramid from 3.32 leak
+-Audio recording no longer crashes, but it doesn't seem to record anything
 -Video playback is possible using 3.32 leak OMX libs or using ics-omx
  frameworks/base branch, but OMX from ics-test branch results in a segfault
 -It should be theoretically possible for wifi calling to work, since the
