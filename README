@@ -5,8 +5,8 @@ Kernel:
 
 Current issues:
 -wifi tethering doesn't work
--bluetooth doesn't work
 -camcorder doesn't work
+-bluetooth causes phone to FC when disabling
 
 Misc issues:
 -Invensys MPU cannot be built from source since we do not have access to
@@ -32,4 +32,5 @@ Tiamat team
 vorbeth
 elelinux
 blahbl4hblah
+Sc2k
 toastcfh
