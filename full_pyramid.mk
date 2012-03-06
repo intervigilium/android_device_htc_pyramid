@@ -38,8 +38,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 # This is where we'd set a backup provider if we had one
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
-# Inherit from HTC common
-$(call inherit-product, device/htc/common/common.mk)
+
 # Inherit from pyramid device
 $(call inherit-product, device/htc/pyramid/device.mk)
 
