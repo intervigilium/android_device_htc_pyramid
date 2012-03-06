@@ -106,6 +106,7 @@ lib/libdsutils.so
 lib/libgemini.so
 lib/libgsl.so
 lib/libidl.so
+lib/libmm-color-convertor.so
 lib/libnetmgr.so
 lib/libOpenVG.so
 lib/libqdp.so
