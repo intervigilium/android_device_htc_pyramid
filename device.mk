@@ -106,12 +106,15 @@ PRODUCT_PACKAGES += \
 # TODO: build libOmxVenc, libOmxVdec eventually
 PRODUCT_PACKAGES += \
     libstagefrighthw \
-    librs_jni \
     libdivxdrmdecrypt \
     libmm-omxcore \
     libOmxCore \
     libOmxVenc \
     libOmxVdec
+
+# Renderscript
+PRODUCT_PACKAGES += \
+    librs_jni
 
 # USB
 PRODUCT_PACKAGES += \
