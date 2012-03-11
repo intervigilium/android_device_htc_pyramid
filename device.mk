@@ -86,12 +86,9 @@ PRODUCT_PACKAGES += \
     libtilerenderer
 
 # Hardware
-# TODO: build our own camera, sensors eventually
 PRODUCT_PACKAGES += \
     gps.pyramid \
     lights.pyramid
-#    sensors.pyramid \
-#    camera.pyramid
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -102,8 +99,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     libaudioutils
 
-# Media
-# TODO: build libOmxVenc, libOmxVdec eventually
+# OMX
 PRODUCT_PACKAGES += \
     libstagefrighthw \
     libdivxdrmdecrypt \
