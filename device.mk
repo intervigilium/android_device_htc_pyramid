@@ -97,6 +97,8 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
+    audio_policy.msm8660 \
+    audio.primary.msm8660 \
     libaudioutils
 
 # OMX

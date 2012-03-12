@@ -53,8 +53,8 @@ bin/qmuxd
 xbin/wireless_modem
 
 # Audio
-lib/hw/audio.primary.default.so
-lib/hw/audio_policy.default.so
+lib/libacdbloader.so
+lib/libacdbmapper.so
 lib/libaudcal.so
 lib/libaudioalsa.so
 lib/libhtc_acoustic.so
@@ -117,7 +117,8 @@ lib/libqmi.so
 lib/libhtc_ril.so
 lib/libril.so
 
-# Sensors
+# Hardware files
+lib/hw/camera.default.so
 lib/hw/sensors.pyramid.so
 lib/libmllite.so
 lib/libmlplatform.so
