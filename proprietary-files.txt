@@ -31,14 +31,6 @@ etc/soundimage/Sound_Rec_Landscape.txt
 etc/soundimage/Sound_Recording.txt
 etc/soundimage/Sound_Rec_Portrait.txt
 
-# Firmware
-etc/firmware/bcm4329.hcd
-etc/firmware/fw_bcm4329_apsta.bin
-etc/firmware/fw_bcm4329.bin
-etc/firmware/leia_pfp_470.fw
-etc/firmware/leia_pm4_470.fw
-etc/firmware/vidc_1080p.fw
-
 # Executable files
 bin/charging
 bin/htcbatt
