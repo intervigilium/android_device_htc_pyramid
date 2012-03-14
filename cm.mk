@@ -1,6 +1,7 @@
 $(call inherit-product, device/htc/pyramid/full_pyramid.mk)
 
 PRODUCT_RELEASE_NAME := pyramid
+
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
