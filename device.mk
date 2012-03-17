@@ -97,7 +97,7 @@ $(call inherit-product, device/htc/pyramid/media_a1026.mk)
 $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
 
 # dalvik heap settings
-$(call inherit-product, frameworks/base/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 
 # proprietary blobs
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
