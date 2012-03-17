@@ -84,6 +84,3 @@ ro.emmc=1
 
 # System property for cabl
 ro.qualcomm.cabl=1
-
-# UMS
-persist.sys.usb.config=mass_storage,adb
