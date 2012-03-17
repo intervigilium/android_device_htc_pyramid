@@ -107,7 +107,6 @@ lib/libqmi.so
 
 # Radio
 lib/libhtc_ril.so
-lib/libril.so
 
 # Sensors
 lib/hw/sensors.pyramid.so

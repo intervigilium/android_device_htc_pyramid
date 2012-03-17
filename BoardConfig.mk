@@ -33,9 +33,6 @@ TARGET_USES_OVERLAY := false
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
 
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 
