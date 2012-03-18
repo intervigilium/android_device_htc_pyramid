@@ -27,9 +27,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 
-# Graphics
-TARGET_USES_OVERLAY := false
-
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
 
