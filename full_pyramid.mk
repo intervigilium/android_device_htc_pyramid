@@ -37,10 +37,3 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from pyramid device
 $(call inherit-product, device/htc/pyramid/device.mk)
-
-# Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_pyramid
-PRODUCT_DEVICE := pyramid
-PRODUCT_BRAND := HTC
-PRODUCT_MANUFACTURER := HTC
-PRODUCT_MODEL := Sensation
