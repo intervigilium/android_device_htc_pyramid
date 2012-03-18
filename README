@@ -21,16 +21,19 @@ Misc issues:
 Building:
 -device/htc/msm8660-common, branch ics
 -frameworks/base, branch ics-omx
--hardware/libhardware, branch ics-chocolate
--hardware/msm7k, branch ics-test
--hardware/qcom/display, branch ics-chocolate
--hardware/qcom/media, branch ics-test
+-intervigilium - hardware/libhardware, branch ics-chocolate
+-intervigilium - hardware/msm7k, branch ics-test
+-intervigilium - hardware/qcom/display, branch ics-chocolate
+-intervigilium - hardware/qcom/media, branch ics-test
+
+New boot animation:
+Requires merging of http://review.cyanogenmod.com/#change,13579
 
 Credits goes to:
 Cyanogenmod team
 Evervolv team
 Tiamat team
-vorbeth
+intervigilium
 elelinux
 blahbl4hblah
 Sc2k
