@@ -89,8 +89,8 @@ on init
     chmod 0660                /sys/class/rfkill/rfkill0/state
 
     # bluetooth MAC address programming
-    chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddr
-    setprop ro.bt.bdaddr_path /sys/module/htc_bdaddress/parameters/bdaddr
+    chown bluetooth bluetooth /sys/module/htc_bdaddress/parameters/bdaddress
+    setprop ro.bt.bdaddr_path /sys/module/htc_bdaddress/parameters/bdaddress
 
     # lights
     chown system system /sys/class/leds/green/brightness
