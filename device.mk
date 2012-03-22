@@ -80,8 +80,7 @@ PRODUCT_PACKAGES += \
 # Kernel and modules
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/prebuilt/kernel:kernel \
-    device/htc/pyramid/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
-    device/htc/pyramid/modules/kineto_gan.ko:system/lib/modules/kineto_gan.ko
+    device/htc/pyramid/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
     
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
