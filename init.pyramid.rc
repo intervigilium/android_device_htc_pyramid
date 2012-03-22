@@ -45,9 +45,9 @@ on early-fs
     symlink /vendor/firmware/misc/modem.b00 /vendor/firmware/modem.b00
     symlink /vendor/firmware/misc/modem.mdt /vendor/firmware/modem.mdt
 
-    symlink /system/vendor/firmware/fw_bcm4329.bin /vendor/firmware/fw_bcm4329.bin
-    symlink /system/vendor/firmware/fw_bcm4329_apsta.bin /vendor/firmware/fw_bcm4329_apsta.bin
-    symlink /system/vendor/firmware/bcm4329.hcd /vendor/firmware/bcm4329.hcd
+    symlink /system/etc/firmware/fw_bcm4329.bin /vendor/firmware/fw_bcm4329.bin
+    symlink /system/etc/firmware/fw_bcm4329_apsta.bin /vendor/firmware/fw_bcm4329_apsta.bin
+    symlink /system/etc/firmware/bcm4329.hcd /vendor/firmware/bcm4329.hcd
 
     mount ext4 /dev/block/mmcblk0p22 /system wait ro data=ordered noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p23 /data wait noatime nosuid nodev data=ordered noauto_da_alloc
