@@ -1,12 +1,11 @@
 Ice Cream Sandwich device tree for HTC Pyramid (Sensation)
 
 Kernel:
--HTC 3.0.16 kernel from 3.32 leak
+- osp-stock
 
 Current issues:
 -wifi tethering doesn't work
 -camcorder doesn't work
--bluetooth causes phone to FC when disabling
 
 Misc issues:
 -Invensys MPU cannot be built from source since we do not have access to
@@ -16,18 +15,17 @@ Misc issues:
 -Overlay (liboverlay) does not initialize correctly due to different or
  missing MSMFB_MIXER_INFO ioctl in HTC kernel, should probably be left off.
 -It should be theoretically possible for wifi calling to work, since the
- kineto.ko module exists
+ kineto.ko module is built in
 
 Building:
 -device/htc/msm8660-common, branch ics
 -frameworks/base, branch ics-omx
+-vendor/qcom/opensource/mm-core, branch ics
+-vendor/qcom/opensource/mm-video, branch ics
 -intervigilium - hardware/libhardware, branch ics-chocolate
 -intervigilium - hardware/msm7k, branch ics-test
 -intervigilium - hardware/qcom/display, branch ics-chocolate
 -intervigilium - hardware/qcom/media, branch ics-test
-
-New boot animation:
-Requires merging of http://review.cyanogenmod.com/#change,13579
 
 Credits goes to:
 Cyanogenmod team
