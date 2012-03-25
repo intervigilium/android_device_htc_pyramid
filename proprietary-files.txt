@@ -51,18 +51,6 @@ lib/libaudcal.so
 lib/libaudioalsa.so
 lib/libhtc_acoustic.so
 
-# Bluetooth
-bin/bluetoothd
-bin/btld
-lib/bluez-plugin/audio.so
-lib/bluez-plugin/bluetooth-health.so
-lib/bluez-plugin/input.so
-lib/bluez-plugin/network.so
-lib/libbluedroid.so
-lib/libbluetoothd.so
-lib/libbluetooth.so
-lib/libglib.so
-
 # Camera
 lib/hw/camera.default.so
 lib/libcamera_client.so
