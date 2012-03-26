@@ -215,7 +215,7 @@ service btld /system/bin/btld -lpm 1 -hb 3000000
     oneshot
 
 service hciattach /system/bin/brcm_patchram_plus --enable_hci \
-    --baudrate 3000000 --patchram /vendor/firmware/bcm4329.hcd /dev/ttyHS0
+    --baudrate 3000000 --enable_lpm --patchram /vendor/firmware/bcm4329.hcd /dev/ttyHS0
     class late_start
     user bluetooth
     group bluetooth net_bt_admin
