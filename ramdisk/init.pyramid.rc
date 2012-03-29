@@ -239,16 +239,6 @@ service htcbatt /system/bin/htcbatt
     class late_start
     user root
 
-service mpdecision /system/bin/mpdecision --no_sleep --avg_comp --single_core_while_panel_off
-    class late_start
-    user root
-    disabled
-
-service thermald /system/bin/thermald
-    class late_start
-    user root
-    disabled
-
 on property:init.svc.bootanim=stopped
     start thermald
     start mpdecision
