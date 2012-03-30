@@ -239,10 +239,6 @@ service htcbatt /system/bin/htcbatt
     class late_start
     user root
 
-on property:init.svc.bootanim=stopped
-    start thermald
-    start mpdecision
-
 service htc_ebdlogd /system/bin/htc_ebdlogd -s -k -P 7 -n 10 -N 10
     user root
     disabled
