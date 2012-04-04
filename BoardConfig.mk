@@ -37,6 +37,7 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_
 
 # QCOM Gralloc/Copybit/HWcomposer
 TARGET_USES_OVERLAY := false
+COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
 #Camera
 BOARD_HAVE_HTC_FFC := true
