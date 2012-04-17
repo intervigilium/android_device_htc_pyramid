@@ -34,7 +34,9 @@ TARGET_BOOTLOADER_BOARD_NAME := pyramid
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1
-TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
+
+TARGET_KERNEL_CONFIG := cyanogenmod_pyramid_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/msm8660
 
 # QCOM Gralloc/Copybit/HWcomposer
 TARGET_USES_OVERLAY := false
