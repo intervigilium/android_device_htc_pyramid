@@ -41,7 +41,6 @@ WIFI_DRIVER_MODULE_NAME          := bcmdhd
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
 
 # QCOM Gralloc/Copybit/HWcomposer
-TARGET_USES_OVERLAY := false
 COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
 # Qcom GPS
